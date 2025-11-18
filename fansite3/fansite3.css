@@ -113,6 +113,7 @@ body {
   color : var(--burger_background_color) ; 
   width: 50vw;
   height : 100vh;
+  position : fixed ;
 }
 
 .hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar { 
