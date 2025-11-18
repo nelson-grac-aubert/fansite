@@ -5,6 +5,11 @@
   margin : 0;
 }
 
+a {
+  color: inherit; 
+  text-decoration: inherit;
+}
+
 body {
   background-image: url("pictures/background_web.png");
   background-size: cover;
