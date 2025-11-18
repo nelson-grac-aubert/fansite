@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
+
 * {
   padding : 0;
   margin : 0;
@@ -9,6 +11,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: "Stack Sans Text", sans-serif;
 }
 
 /* gallerie photos */
