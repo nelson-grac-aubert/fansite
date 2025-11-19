@@ -3,6 +3,7 @@
 * {
   padding : 0;
   margin : 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -154,7 +155,88 @@ un élément avant, un élément après */
   color : #C5E7F0
 }
 
-@media screen and (min-width: 800px) {
+.desktop_nav_bar {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+  padding: 0 15px;
+
+}
+
+.desktop_nav_bar img {
+  height: 15vh;
+  border-radius: 999px;
+  margin-right: 20px;
+}
+
+.buttons_box {
+  display: flex;
+  gap: 15px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown_button {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  padding: 10px 20px;
+  margin-right : 40px ;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.dropdown_button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+
+.dropdown_content a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown_content a:hover {
+  background-color: #555;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+}
+
+
+@media screen and (max-width: 799px) {
+  .desktop_nav_bar {
+    display: none ;
+  }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+  .desktop_nav_bar {
+    display: none ;
+  }
+
   .sidebar {
     width: 45vw;
   }
@@ -163,6 +245,12 @@ un élément avant, un élément après */
     font-size: 18px;
   }
 
+}
+
+@media screen and (min-width: 1280px) {
+  .hamburger_menu {
+    display: none;
+  }
 }
 
 /* footer */
@@ -256,10 +344,7 @@ un élément avant, un élément après */
 
 }
 
-
 /* gameplay */
-
-
 
 /* actus */
 
@@ -270,11 +355,9 @@ un élément avant, un élément après */
   background-repeat : no-repeat ;
   background-size : cover ;
   background-position: right;
-
   display : flex ; 
   flex-direction: column;
   justify-content: center;
-
   color : #C5E7F0 ; 
 }
 
