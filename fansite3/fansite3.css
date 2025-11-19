@@ -45,7 +45,7 @@ c'est ici qu'on déclare les variables CSS */
   width: max-content ; /* la largeur clickable n'est que celle sous les barres */
 
   /* ne bouge pas en scrollant, fixé en haut a droite */
-  position : absolute ; 
+  position : fixed ; 
   top : var(--hamburger_margin) ;
   right : var(--hamburger_margin) ;
 
@@ -135,11 +135,11 @@ un élément avant, un élément après */
 }
 
 .burger_links a {
-  padding : 0 0 2rem 0;
+  padding : 3rem 0 0 0;
   font-size: 18px;
 }
 
-@media screen and (min-width:800px) and (max-width:1279px) {
+@media screen and (min-width:800px) /* and (max-width:1279px) */ {
   .sidebar {
     width : 50vw ;
   }
@@ -152,23 +152,50 @@ un élément avant, un élément après */
 /* footer */
 
 .footer_container {
-  background-color: rgba(0, 0, 0, 0.2) ;
-  display : flex ; 
+  background-color: rgba(0, 0, 0, 0.300);
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  color: white ;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  color: #ffffff;
+  gap: 2rem;
 }
 
 .footer_column {
-  display : flex;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  
+  align-items: center;
+  min-width: 180px;
+  max-width: 220px;
+  text-align: center;
 }
 
 .footer_column img {
+  width: 80%;
+  max-width: 120px;
   height: auto;
-  width : 20%;
-  border-radius: 70px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.footer_column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #C5E7F0;
+  font-variant: small-caps;
+  letter-spacing: 0.5px;
+}
+
+.footer_column a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+  transition: color 0.3s ease;
+}
+
+.footer_column a:hover {
+  color: #ffffff;
 }
 
 /* accueil */
@@ -218,3 +245,33 @@ un élément avant, un élément après */
 
 
 /* actus */
+
+.news_container {
+  display : flex ;
+  justify-content: center;
+}
+
+.news_column {
+  width : 80vw ;
+  display : flex ; 
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news_article {
+  color : white ; 
+  max-width: 100%;
+}
+
+.news_title {
+  color : #C5E7F0 ;
+}
+
+.news_picture {
+  max-width: 100%;
+}
+
+.news_text {
+  max-width: 100%;
+}
+
