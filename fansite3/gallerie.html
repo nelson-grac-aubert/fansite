@@ -1,39 +1,110 @@
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="fansite3.css">
-    <title>Gallerie</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="fansite3.css">
+  <title>Gallerie</title>
 </head>
 <body>
-    
+
+<!-- label : objet d'une interface utilisateur -->
+<label class="hamburger_menu">
+  <!-- checkbox : permet de cliquer et d'avoir une réaction sans JS -->
+  <input type="checkbox">
+</label>
+
+<div class="sidebar_container">
+  <!-- aside : balise accessibilité pour un  
+  élément sans rapport avec le contenu de la page -->
+  <aside class="sidebar">
+    <nav class="burger_links">
+      <a href="../index.html" class="burger_link_home">Accueil</a>
+      <a href="fansite3.html" class="burger_link_home">Dark Souls III</a>
+      <a href="gallerie.html">Galerie</a>
+      <a href="gameplay.html">Gameplay</a>
+      <a href="actus.html">Actualités FromSoftware</a>
+      <a href="../fansite2/fansite2.html" class="burger_link_home">Expédition 33</a>
+      <a href="../fansite2/news.html">News</a>
+      <a href="../fansite2/media.html">Media</a>
+      <a href="../fansite1/fansite1.html" class="burger_link_home">Hollow Knight</a>
+      <a href="../fansite1/actualites.html">Actualités</a>
+      <a href="../fansite1/galerie.html">Galerie</a>
+      <a href="../fansite1/new_opus.html">Silksong</a>
+    </nav>
+  </aside>
+</div>
+
+<header class="banner_box">
+  <span>Galerie</span>
+  <p>Les plus beaux screenshots, vistas et fan-art de Dark Souls III</p>
+</header>  
+
 <section class="photo_gallery">
 
-    <div class="gallery_column">
-      <img src="pictures\abyss_watchers.jpg" alt="#">
-      <img src="pictures\ariandel.jpg" alt="#">
-      <img src="pictures\dreg_heap.jpg" alt="#">
-      <img src="pictures\iudex_gundyr.jpg" alt="#">
-      <img src="pictures\ringed_city_square.jpg" alt="#">
-    </div>
+  <div class="gallery_column">
+    <img src="pictures\abyss_watchers.jpg" alt="Veilleurs des abysses">
+    <img src="pictures\farron_keep.png" alt="Farron">
+    <img src="pictures\firelink_shrine.jpg" alt="Sanctuaire de Lige-Feu">
+    <img src="pictures\ariandel.jpg" alt="Ariandel">
+    <img src="pictures\dreg_heap.jpg" alt="Tas de débris">
+    <img src="pictures\iudex_gundyr.jpg" alt="Iudex Gundir">
+    <img src="pictures\kiln_first_flame.jpg" alt="Creuset de la première flamme">
+    <img src="pictures\ringed_city_square.jpg" alt="Cité enclavée">
+  </div>
 
-    <div class="gallery_column">
-      <img src="pictures\ariandel_bridge.jpg" alt="#">
-      <img src="pictures\cleaver_enemy.jpg" alt="#">
-      <img src="pictures\gael_arena.jpg" alt="#">
-      <img src="pictures\lothric_lorian.jpg" alt="#">
-      <img src="pictures\soul_of_cinder.jpg" alt="#">
-    </div>
+  <div class="gallery_column">
+    <img src="pictures\ariandel_bridge.jpg" alt="Pont d'Ariandel">
+    <img src="pictures\firelink_shrine.jpg" alt="Sanctuaire de Lige-Feu">
+    <img src="pictures\castle_with_sun.png" alt="Chateau ensoleillé">
+    <img src="pictures\cleaver_enemy.jpg" alt="Enemmi avec machette">
+    <img src="pictures\gael_arena.jpg" alt="Arène de Gael">
+    <img src="pictures\lothric_lorian.jpg" alt="Lothric et Lorian">
+    <img src="pictures\soul_of_cinder.jpg" alt="Ame des cendres">
+  </div>
 
-    <div class="gallery_column">
-      <img src="pictures\ashen_one.jpg" alt="#">
-      <img src="pictures\dancer.jpg" alt="#">
-      <img src="pictures\irithyll.jpg" alt="#">
-      <img src="pictures\pvp.jpg" alt="#">
-    </div>
+  <div class="gallery_column">
+    <img src="pictures\ashen_one.jpg" alt="Morteflamme">
+    <img src="pictures\road_of_sacrifices.webp" alt="Route des sacrifices">
+    <img src="pictures\vordt.jpg" alt="Vordt de la vallée boréale">
+    <img src="pictures\dragon_keep.png" alt="Donjon">
+    <img src="pictures\dark_sun.png" alt="Soleil noir">
+    <img src="pictures\dancer.jpg" alt="Danseur de la vallée boréale">
+    <img src="pictures\irithyll.jpg" alt="Irithyll de la vallée boréale">
+    <img src="pictures\pvp.jpg" alt="PvP">
+  </div>
   
 </section>
 
+<footer class="footer_container">
+  <div class = "footer_column">
+    <img src="pictures/logo_final.png" alt="logo">
+    <a href="../index.html">Accueil</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <div class = "footer_column">
+    <h4 class="footer_title"> Dark Souls III</h4>
+    <a href="fansite3.html">Accueil</a>
+    <a href="gallerie.html">Galerie</a>
+    <a href="gameplay.html">Gameplay</a>
+    <a href="actus.html">Actualités FS</a>
+  </div>
+
+  <div class = "footer_column">
+    <h4 class="footer_title"> Expédition 33</h4>
+    <a href="../fansite2/fansite2.html">Accueil</a>
+    <a href="../fansite2/news.html">News</a>
+    <a href="../fansite2/media.html">Media</a>
+  </div>
+
+  <div class = "footer_column">
+    <h4 class="footer_title"> Hollow Knight</h4>
+    <a href="../fansite1/fansite1.html">Accueil</a>
+    <a href="../fansite1/actualites.html">Actualités</a>
+    <a href="../fansite1/galerie.html">Galerie</a>
+    <a href="../fansite1/new_opus.html">Silksong</a>
+  </div>
+</footer>
 
 </body>
 </html>

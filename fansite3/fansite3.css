@@ -1,8 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
+
 * {
   padding : 0;
   margin : 0;
-  background-color: black;
 }
+
+a {
+  color: inherit; 
+  text-decoration: inherit;
+}
+
+body {
+  background-image: url("pictures/background_web.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Stack Sans Text", sans-serif;
+}
+
+/* nav */
+
+/* root selectionne l'élément racine du document, ici <html>
+c'est ici qu'on déclare les variables CSS */
+:root {
+  --burger_bar_width : 45px ;
+  --burger_bar_height : 6px ;
+  --burger_gap : 6px ;
+  --burger_background_color : rgba(255, 255, 255, 1) ; 
+  --burger_slider_color : rgba(0, 0, 0, 0.9) ; 
+  /* ease-in-out : début et fin rapide */
+  --burger_animation_time : 300ms ease-in-out ;
+  --hamburger_margin : 10px ; 
+
+  /* on calcule la hauteur de l'élement en entier pour déterminer la longueur
+  finale des barres quand elles se transforment en croix */
+  --hamburger_menu_height : calc(var(--burger_bar_height) * 3 + (var(--burger_gap) * 2)) ;
+}
+
+.hamburger_menu {
+  display: flex ;
+  flex-direction : column ;
+  gap : var(--burger_gap) ; 
+  width: max-content ; /* la largeur clickable n'est que celle sous les barres */
+
+  /* ne bouge pas en scrollant, fixé en haut a droite */
+  position : fixed ; 
+  top : var(--hamburger_margin) ;
+  right : var(--hamburger_margin) ;
+
+  z-index: 2; /* supérieur à 0 donc apparait toujours en avant */
+
+  cursor : pointer ; 
+
+  /* calcul de la largeur de la croix après transformation : 
+  hauteur du menu x racine carrée de 2 */
+  --cross-width : calc(var(--hamburger_menu_height) * 1.414213);
+}
+
+/* les trois barres du burger seront la checkbox, 
+un élément avant, un élément après */
+.hamburger_menu::before,
+.hamburger_menu::after,
+.hamburger_menu input {
+  content: "" ;
+  width : var(--burger_bar_width) ;
+  height : var(--burger_bar_height) ; 
+  background-color: var(--burger_background_color) ;
+  border-radius : 999px ; 
+
+  transition : opacity var(--burger_animation_time), width var(--burger_animation_time), 
+  rotate var(--burger_animation_time), translate var(--burger_animation_time) ;
+  
+  /* transition des deux lignes en croix :  
+  la rotation se fait atour du bon point*/
+  transform-origin: right center;
+}
+
+.hamburger_menu input {
+  /* on ne veut pas interagir avec la checkbox 
+  mais avec tout son conteneur (les 3 barres) */
+  appearance: none ;
+  outline : none ;
+  pointer-events: none ; 
+}
+
+.hamburger_menu input:checked {
+  /* la barre du milieu disparait pour faire la croix */
+  opacity : 0 ;
+  width : 0 ; 
+}
+
+/* si le hamburger menu a son input checked, alors agit sur 
+::before et ::after càd les barres du haut/bas*/
+.hamburger_menu:has(input:checked)::before {
+  rotate: -45deg ;
+  width: var(--cross-width);
+  /* on décale legerement les barres pour tenir compte de leur épaisseur
+  on décale l'abcisse de 0, l'ordonnée de la moitié de l'épaisseur */
+  translate : 0 calc(var(--burger_bar_height) / -2) ;
+}
+.hamburger_menu:has(input:checked)::after {
+  rotate: 45deg ;
+  width: var(--cross-width);
+  translate : 0 calc(var(--burger_bar_height) / 2) ;
+}
+
+.sidebar_container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar {
+  transition: translate var(--burger_animation_time);
+  translate: 100%;
+  padding: 1rem 1.5rem;
+  padding-top: calc(var(--hamburger_menu_height) + var(--hamburger_margin) + 0.5rem);
+  background-color: var(--burger_slider_color);
+  color: var(--burger_background_color);
+  width: 93.25vw;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+}
+
+.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar {
+  translate: 0;
+}
+
+.burger_links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.burger_links a {
+  font-size: 1.1rem;
+  padding: 0.1rem 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.burger_link_home {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #C5E7F0 ;
+}
+
+.burger_links a:hover {
+  color : #C5E7F0
+}
+
+@media screen and (min-width: 800px) {
+  .sidebar {
+    width: 45vw;
+  }
+
+  .burger_links a {
+    font-size: 18px;
+  }
+
+}
+
+/* footer */
+
+.footer_container {
+  margin-top : 2rem ;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  color: #ffffff;
+  gap: 2rem;
+}
+
+.footer_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  max-width: 220px;
+  text-align: center;
+}
+
+.footer_column img {
+  width: 80%;
+  max-width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.footer_column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #C5E7F0;
+  font-variant: small-caps;
+  letter-spacing: 0.5px;
+}
+
+.footer_column a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0.3rem 0;
+  transition: color 0.3s ease;
+}
+
+.footer_column a:hover {
+  color: #ffffff;
+}
+
+/* accueil */
 
 /* gallerie photos */
 
@@ -26,7 +239,7 @@
 .gallery_column img {
   width : 100%;
   height : 100%;
-  border-radius : 5px;
+  border-radius : 10px;
   object-fit: cover;
 }
  
@@ -38,7 +251,89 @@
   }
 
 .gallery_column {
-  width : 75%;
+  width : 80%;
 }
 
 }
+
+
+/* gameplay */
+
+
+
+/* actus */
+
+.banner_box {
+  width : 100vw ;
+  height : 200px ;
+  background-image: url("pictures/actus_banner.png");
+  background-repeat : no-repeat ;
+  background-size : cover ;
+  background-position: right;
+
+  display : flex ; 
+  flex-direction: column;
+  justify-content: center;
+
+  color : #C5E7F0 ; 
+}
+
+.banner_box span {
+  font-size : 1.6rem ;
+  margin-left : 2.5rem ; 
+  margin-right: 2rem ;
+}
+
+.banner_box p {
+  margin-left : 2.5rem ; 
+  margin-right: 2rem ;
+}
+
+.news_container {
+  display : flex ;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news_column {
+  width : 92vw ;
+  display : flex ; 
+  flex-direction: column;
+}
+
+.news_article {
+  color : white ; 
+  max-width: 100%;
+  margin-top : 2rem ;
+  margin-bottom : 0 ;
+  justify-self: center;
+
+  background-color: rgba(0, 0, 0, 0.300);
+  border-radius: 20px ;
+  padding : 12px 20px 30px 20px; 
+}
+
+.news_title {
+  color : #C5E7F0 ;
+  font-size : 1.4rem ;
+  margin-top : 0.6rem ;
+  margin-bottom : 0.6rem ;
+}
+
+.news_picture {
+  width : 100%;
+  height : auto;
+  border-radius : 10px;
+  margin-top : 0.6rem ;
+  margin-bottom : 0.6rem ;
+}
+
+.news_text {
+  max-width: 100%;
+  font-size : 1rem ;
+  margin-top : 0.6rem ;
+  margin-bottom : -0.8rem ;
+  text-align: justify;
+}
+
+
