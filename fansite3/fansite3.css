@@ -28,7 +28,7 @@ c'est ici qu'on déclare les variables CSS */
   --burger_bar_height : 6px ;
   --burger_gap : 6px ;
   --burger_background_color : rgba(255, 255, 255, 1) ; 
-  --burger_slider_color : rgba(83, 83, 83, 0.7) ; 
+  --burger_slider_color : rgba(0, 0, 0, 0.9) ; 
   /* ease-in-out : début et fin rapide */
   --burger_animation_time : 300ms ease-in-out ;
   --hamburger_margin : 10px ; 
@@ -107,45 +107,64 @@ un élément avant, un élément après */
 }
 
 .sidebar_container {
-  display : flex ; 
+  display: flex;
   justify-content: flex-end;
 }
 
 .sidebar {
-  transition : translate var(--burger_animation_time) ;
-  translate : 100% ;
-  padding : 0.5rem 1rem; /* rem = taille police root */
-  /* liens placés la croix */
-  padding-top: calc(var(--hamburger_menu_height) + var(--hamburger_margin) + 1rem) ;
+  transition: translate var(--burger_animation_time);
+  translate: 100%;
+  padding: 1rem 1.5rem;
+  padding-top: calc(var(--hamburger_menu_height) + var(--hamburger_margin) + 0.5rem);
   background-color: var(--burger_slider_color);
-  color : var(--burger_background_color) ; 
+  color: var(--burger_background_color);
   width: 100vw;
-  height : 100vh;
-  position : fixed ;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
 }
 
-.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar { 
-  translate : 0 ;
+.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar {
+  translate: 0;
 }
 
 .burger_links {
-  padding-left : 2.5rem ;
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 1.5rem;
 }
 
 .burger_links a {
-  padding : 3rem 0 0 0;
-  font-size: 18px;
+  font-size: 0.8rem;
+  padding: 0.1rem 0;
+  text-decoration: none;
+  color: inherit;
 }
 
-@media screen and (min-width:800px) /* and (max-width:1279px) */ {
+.burger_link_home {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #C5E7F0 ;
+}
+
+.burger_links a:hover {
+  color : #C5E7F0
+}
+
+@media screen and (min-width: 800px) {
   .sidebar {
-    width : 50vw ;
+    width: 45vw;
   }
 
   .burger_links a {
-    font-size : 22px;
+    font-size: 18px;
+  }
+
+  .burger_links span {
+    font-size: 1.2rem;
   }
 }
 
