@@ -169,7 +169,7 @@ un élément avant, un élément après */
 
 .footer_container {
   margin-top : 2rem ;
-  background-color: rgba(0, 0, 0, 0.300);
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -263,13 +263,40 @@ un élément avant, un élément après */
 
 /* actus */
 
+.banner_box {
+  width : 100vw ;
+  height : 200px ;
+  background-image: url("pictures/actus_banner.png");
+  background-repeat : no-repeat ;
+  background-size : cover ;
+  background-position: right;
+
+  display : flex ; 
+  flex-direction: column;
+  justify-content: center;
+
+  color : #C5E7F0 ; 
+}
+
+.banner_box span {
+  font-size : 1.6rem ;
+  margin-left : 2.5rem ; 
+  margin-right: 2rem ;
+}
+
+.banner_box p {
+  margin-left : 2.5rem ; 
+  margin-right: 2rem ;
+}
+
 .news_container {
   display : flex ;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .news_column {
-  width : 85vw ;
+  width : 92vw ;
   display : flex ; 
   flex-direction: column;
 }
@@ -288,7 +315,7 @@ un élément avant, un élément après */
 
 .news_title {
   color : #C5E7F0 ;
-  font-size : 1.6rem ;
+  font-size : 1.4rem ;
   margin-top : 0.6rem ;
   margin-bottom : 0.6rem ;
 }
@@ -308,4 +335,5 @@ un élément avant, un élément après */
   margin-bottom : -0.8rem ;
   text-align: justify;
 }
+
 
