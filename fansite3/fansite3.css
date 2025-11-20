@@ -7,8 +7,8 @@
 }
 
 a {
-  color: inherit; 
-  text-decoration: inherit;
+  color: white; 
+  text-decoration: none;
 }
 
 body {
@@ -18,6 +18,30 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Stack Sans Text", sans-serif;
+}
+
+.banner_box {
+  width : 100vw ;
+  height : 200px ;
+  background-image: url("pictures/actus_banner.png");
+  background-repeat : no-repeat ;
+  background-size : cover ;
+  background-position: right;
+  display : flex ; 
+  flex-direction: column;
+  justify-content: center;
+  color : #C5E7F0 ; 
+}
+
+.banner_box span {
+  font-size : 1.6rem ;
+  margin-left : 2.5rem ; 
+  margin-right: 2rem ;
+}
+
+.banner_box p {
+  margin-left : 2.5rem ; 
+  margin-right: 2rem ;
 }
 
 /* nav */
@@ -48,7 +72,7 @@ c'est ici qu'on déclare les variables CSS */
   /* ne bouge pas en scrollant, fixé en haut a droite */
   position : fixed ; 
   top : var(--hamburger_margin) ;
-  right : var(--hamburger_margin) ;
+  right : calc(var(--hamburger_margin) * 2) ;
 
   z-index: 2; /* supérieur à 0 donc apparait toujours en avant */
 
@@ -119,7 +143,7 @@ un élément avant, un élément après */
   padding-top: calc(var(--hamburger_menu_height) + var(--hamburger_margin) + 0.5rem);
   background-color: var(--burger_slider_color);
   color: var(--burger_background_color);
-  width: 93.25vw;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   overflow-y: auto;
@@ -210,9 +234,7 @@ un élément avant, un élément après */
 }
 
 .dropdown_content a {
-  color: white;
   padding: 10px 15px;
-  text-decoration: none;
   display: block;
 }
 
@@ -250,6 +272,14 @@ un élément avant, un élément après */
 @media screen and (min-width: 1280px) {
   .hamburger_menu {
     display: none;
+  }
+
+  .sidebar {
+    display : none ;
+  }
+
+  .banner_box {
+    display : none ;
   }
 }
 
@@ -348,29 +378,7 @@ un élément avant, un élément après */
 
 /* actus */
 
-.banner_box {
-  width : 100vw ;
-  height : 200px ;
-  background-image: url("pictures/actus_banner.png");
-  background-repeat : no-repeat ;
-  background-size : cover ;
-  background-position: right;
-  display : flex ; 
-  flex-direction: column;
-  justify-content: center;
-  color : #C5E7F0 ; 
-}
 
-.banner_box span {
-  font-size : 1.6rem ;
-  margin-left : 2.5rem ; 
-  margin-right: 2rem ;
-}
-
-.banner_box p {
-  margin-left : 2.5rem ; 
-  margin-right: 2rem ;
-}
 
 .news_container {
   display : flex ;
