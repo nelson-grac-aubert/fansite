@@ -212,7 +212,7 @@ un élément avant, un élément après */
   border: none;
   cursor: pointer;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 1.2rem;
   border-radius: 5px;
 }
 
@@ -234,7 +234,8 @@ un élément avant, un élément après */
 }
 
 .dropdown_content a {
-  padding: 10px 15px;
+  font-size: 1.2rem ;
+  padding: 18px 20px;
   display: block;
 }
 
@@ -333,6 +334,28 @@ un élément avant, un élément après */
   color: #ffffff;
 }
 
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+
+.footer_column h4 {
+  font-size: 1.3rem;
+}
+
+.footer_column a {
+  font-size : 1.1rem ;
+}
+
+}
+
+@media screen and (min-width: 1280px) {
+.footer_column h4 {
+  font-size: 1.5rem;
+} 
+
+.footer_column a {
+  font-size : 1.2rem ;
+}
+}
+
 /* accueil */
 
 /* gallerie photos */
@@ -378,8 +401,6 @@ un élément avant, un élément après */
 
 /* actus */
 
-
-
 .news_container {
   display : flex ;
   flex-direction: column;
@@ -421,10 +442,28 @@ un élément avant, un élément après */
 
 .news_text {
   max-width: 100%;
-  font-size : 1rem ;
+  font-size : 1.1rem ;
   margin-top : 0.6rem ;
   margin-bottom : -0.8rem ;
   text-align: justify;
 }
 
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+.news_title {
+  font-size : 1.5rem ;
+}
+.news_text {
+  font-size : 1.2rem ;
+}
+}
 
+@media screen and (min-width: 1280px) {
+.news_title {
+  font-size : 1.7rem ;
+}
+  
+.news_text {
+  font-size : 1.3rem ;
+}
+
+}
