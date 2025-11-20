@@ -47,3 +47,256 @@ ul{
 .pic-size{
     max-width: 25px;
 }
+
+/* BURGER + NAV BAR */
+
+* {
+  padding : 0;
+  margin : 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: white; 
+  text-decoration: none;
+}
+
+/* root selectionne l'élément racine du document, ici <html>
+c'est ici qu'on déclare les variables CSS */
+:root {
+  --burger_bar_width : 45px ;
+  --burger_bar_height : 6px ;
+  --burger_gap : 6px ;
+  --burger_background_color : rgba(255, 255, 255, 1) ; 
+  --burger_slider_color : rgba(0, 0, 0, 0.9) ; 
+  /* ease-in-out : début et fin rapide */
+  --burger_animation_time : 300ms ease-in-out ;
+  --hamburger_margin : 10px ; 
+
+  /* on calcule la hauteur de l'élement en entier pour déterminer la longueur
+  finale des barres quand elles se transforment en croix */
+  --hamburger_menu_height : calc(var(--burger_bar_height) * 3 + (var(--burger_gap) * 2)) ;
+}
+
+.hamburger_menu {
+  display: flex ;
+  flex-direction : column ;
+  gap : var(--burger_gap) ; 
+  width: max-content ; /* la largeur clickable n'est que celle sous les barres */
+
+  /* ne bouge pas en scrollant, fixé en haut a droite */
+  position : fixed ; 
+  top : var(--hamburger_margin) ;
+  right : calc(var(--hamburger_margin) * 2) ;
+
+  z-index: 2; /* supérieur à 0 donc apparait toujours en avant */
+
+  cursor : pointer ; 
+
+  /* calcul de la largeur de la croix après transformation : 
+  hauteur du menu x racine carrée de 2 */
+  --cross-width : calc(var(--hamburger_menu_height) * 1.414213);
+}
+
+/* les trois barres du burger seront la checkbox, 
+un élément avant, un élément après */
+.hamburger_menu::before,
+.hamburger_menu::after,
+.hamburger_menu input {
+  content: "" ;
+  width : var(--burger_bar_width) ;
+  height : var(--burger_bar_height) ; 
+  background-color: var(--burger_background_color) ;
+  border-radius : 999px ; 
+
+  transition : opacity var(--burger_animation_time), width var(--burger_animation_time), 
+  rotate var(--burger_animation_time), translate var(--burger_animation_time) ;
+  
+  /* transition des deux lignes en croix :  
+  la rotation se fait atour du bon point*/
+  transform-origin: right center;
+}
+
+.hamburger_menu input {
+  /* on ne veut pas interagir avec la checkbox 
+  mais avec tout son conteneur (les 3 barres) */
+  appearance: none ;
+  outline : none ;
+  pointer-events: none ; 
+}
+
+.hamburger_menu input:checked {
+  /* la barre du milieu disparait pour faire la croix */
+  opacity : 0 ;
+  width : 0 ; 
+}
+
+/* si le hamburger menu a son input checked, alors agit sur 
+::before et ::after càd les barres du haut/bas*/
+.hamburger_menu:has(input:checked)::before {
+  rotate: -45deg ;
+  width: var(--cross-width);
+  /* on décale legerement les barres pour tenir compte de leur épaisseur
+  on décale l'abcisse de 0, l'ordonnée de la moitié de l'épaisseur */
+  translate : 0 calc(var(--burger_bar_height) / -2) ;
+}
+.hamburger_menu:has(input:checked)::after {
+  rotate: 45deg ;
+  width: var(--cross-width);
+  translate : 0 calc(var(--burger_bar_height) / 2) ;
+}
+
+.sidebar_container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar {
+  transition: translate var(--burger_animation_time);
+  translate: 100%;
+  padding: 1rem 1.5rem;
+  padding-top: calc(var(--hamburger_menu_height) + var(--hamburger_margin) + 0.5rem);
+  background-color: var(--burger_slider_color);
+  color: var(--burger_background_color);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+}
+
+.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar {
+  translate: 0;
+}
+
+.burger_links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.burger_links a {
+  font-size: 1.1rem;
+  padding: 0.1rem 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.burger_link_home {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #C5E7F0 ;
+}
+
+.burger_links a:hover {
+  color : #C5E7F0
+}
+
+.desktop_nav_bar {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+  padding: 0 15px;
+
+}
+
+.desktop_nav_bar img {
+  height: 15vh;
+  border-radius: 999px;
+  margin-right: 20px;
+}
+
+.buttons_box {
+  display: flex;
+  gap: 15px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown_button {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  padding: 10px 20px;
+  margin-right : 40px ;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.dropdown_button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+
+.dropdown_content a {
+  font-size: 1.2rem ;
+  padding: 18px 20px;
+  display: block;
+}
+
+.dropdown_content a:hover {
+  background-color: #555;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+}
+
+
+@media screen and (max-width: 799px) {
+  .desktop_nav_bar {
+    display: none ;
+  }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+  .desktop_nav_bar {
+    display: none ;
+  }
+
+  .sidebar {
+    width: 45vw;
+  }
+
+  .burger_links a {
+    font-size: 18px;
+  }
+
+}
+
+@media screen and (min-width: 1280px) {
+  .hamburger_menu {
+    display: none;
+  }
+
+  .sidebar {
+    display : none ;
+  }
+
+  .banner_box {
+    display : none ;
+  }
+}
+
+/* BURGER + NAV BAR */
