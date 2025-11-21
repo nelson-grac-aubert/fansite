@@ -450,7 +450,7 @@ un élément avant, un élément après */
 
 .news_text {
   max-width: 100%;
-  font-size : 1.1rem ;
+  font-size : 1rem ;
   margin-top : 0.6rem ;
   margin-bottom : -0.8rem ;
   text-align: justify;
@@ -463,12 +463,15 @@ un élément avant, un élément après */
 .news_text {
   font-size : 1.2rem ;
 }
+
+
 }
 
 @media screen and (min-width: 1280px) {
 .news_title {
   font-size : 1.7rem ;
 }
+
   
 .news_text {
   font-size : 1.3rem ;
