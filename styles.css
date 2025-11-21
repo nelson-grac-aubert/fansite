@@ -13,6 +13,7 @@ body{
     background-image:url("./fansite1/images/Mix_logo-accueil.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     font-family: sans-serif;
     /*display: flex;*/
     align-items: center;
@@ -401,20 +402,20 @@ un élément avant, un élément après */
 
 /*FORMULAIRE DE CONTACT*/
 
-.whole_contact_page {
+/* .whole_contact_page {
   background-image: url(fansite3/pictures/fond_acceuil.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
+} */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
   max-width: 1000px;
   margin: auto;
   border-radius: 8px;
-  overflow: hidden;
+  /* gap : 20px ; */
 }
 
 .form-section, .info-section {
@@ -424,6 +425,7 @@ un élément avant, un élément après */
   padding: 40px;
   background-color: rgba(0, 0, 0, 0.7);
   margin : 20px 0px ;
+  
   
 }
 
@@ -469,12 +471,19 @@ form button:hover {
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
+      
   }
 
   .form-section, .info-section {
-    margin: 0px;
+    flex: none;        
+    width: 100%;        
+    margin: 0 ;  
+    height : auto ;
+    
   }
+
 }
+
 
 
 
