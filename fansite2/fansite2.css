@@ -1,22 +1,34 @@
 /*phone*/
+/*color for light mode*/
 :root{
     --color1:#040404;
     --color2:#DFCA9D;
     --color3:#E7E1CB;
     --color4:#343432;
     --color5:#888B92;
-    --transparent1:rgba(52, 52, 50, 0.6); /*TODO FIX*/
+    --transparent1:rgba(52, 52, 50, 0.6); 
     --transparent2:rgba(4, 4, 4, 0.8);
 }
 @font-face {
     font-family: "playfair-display";
-    src: url(./fonts/playfair-display/PlayfairDisplay-Regular.ttf); /*not used*/
+    src: url(./fonts/playfair-display/PlayfairDisplay-Regular.ttf); 
 }
 @font-face{
     font-family: "montserrat";
     src: url(./fonts/montserrat/Montserrat-Regular.ttf);
 }
-
+/*change colors on dark mode*/
+@media (prefers-color-scheme: dark){
+    :root{
+    --color1:#242543;
+    --color2:#7E8AAC;
+    --color5:#E7E1CB;
+    --color4:#040404; /*not used?*/
+    --color3:#C5E7F0;
+    --transparent1:rgba(52, 52, 50, 0.6); 
+    --transparent2:rgba(36, 37, 67, 0.8);
+        }
+}
 
 body{ /*TODO change bg for desktop*/
     background-image: url(https://static.wixstatic.com/media/52610a_07dd415d65a04d9ba7f18a3110eef10f~mv2.png/v1/fill/w_3206%2Ch_826%2Cal_c%2Cq_95%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/BackgroundTILE.png);
@@ -24,17 +36,12 @@ body{ /*TODO change bg for desktop*/
     display: flex;
     flex-direction: column;
     margin: 0;
-
-}/*change for landscape for other device*/
-
-h1{
-    /*TODO for other pages too*/
-    color: var(--color2);
-    /*bold*/
-    font-family: "playfair-display";
 }
 
-
+h1{
+    color: var(--color2);
+    font-family: "playfair-display";
+}
 .h2-left{
     padding-left: 50px;
     color: var(--color2);
@@ -50,9 +57,7 @@ p, details,summary{
     color: var(--color3);
     font-family: "montserrat";
 }
-#logo{
-    height: 100%;
-}
+
 header{
     width:100%;
     height:50px;
@@ -60,12 +65,14 @@ header{
     margin: 0;/*TODO fondu transparent ?*/
     border: 1px solid;
     border-color: var(--color2);
+    display: flex;
+    justify-content: space-between;
 } 
 .logo-CO{
     margin-bottom: 50px;
 }
 
-#logo-mobile{
+#logo{
     height: 50px;
     /*move left*/
     align-content: start;
@@ -76,6 +83,18 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 0;
+}
+
+#summary{
+    display: block;
+    border: 1px solid var(--color4);
+    background-color: var(--transparent1);
+    margin-bottom: 15px;
+    width: 100%;
+}
+.sumsum{
+    margin: 5%;
 }
 
 .block-article{
@@ -104,12 +123,11 @@ main{
     display: flex;
     flex-direction: column;
     background-color: var(--transparent1);
-    /*opacity: 70%;*/
 }
 hr{
     color:var(--color2);
     height: 1px;
-    background-color: #DFCA9D;
+    background-color: var(--color3);
     width: 100%;
     margin-bottom: 25px;
     align-items: start;
@@ -139,6 +157,7 @@ audio{
     position:sticky;
     color: var(--color2);
 }
+
 .link{
   color: var(--color3);
   text-decoration: none;
@@ -146,7 +165,10 @@ audio{
 }
 .link:hover{
     color: var(--color2);
+    text-decoration: none;
+
 }
+
 
 #hamburger{
     display: none;
@@ -154,11 +176,10 @@ audio{
 .menu {
     display: none;
     flex-direction: column;
-    align-items: end;
     background:var(--transparent1);/*remove: change*/
     border: 1px solid ;
     overflow: hidden;
-    width: 170px;
+    width: 150px;
     transform: translateX(200px); /*remove or learn*/
     margin: 5px;
 }
@@ -197,27 +218,24 @@ audio{
     
 }
 .link-footer{
-  color: var(--color3);
-  text-decoration: none;
-  
-}
-/*
-.footer-link{
     color: var(--color3);
     text-decoration: none;
-}*/
+
+}
 footer a:hover{
     color: var(--color2);
+    text-decoration: none;
+
 }
 /*tablet*/
-@media (min-width: 768px) and(max-width: 991px)  {
+@media (min-width: 425px) and(max-width: 1024px)  {/*TODO change media query and verify nothing fucks up*/
     
 
 
 }
 
 /*laptop*/
-@media (min-width: 992px) {
+@media (min-width: 1025px) {
     
     .block-div-left{
         align-self: start;
@@ -271,6 +289,7 @@ footer a:hover{
     }
     .menu-full>.link{
     color: var(--color3);
+    padding: 15px;
     }
     .link{
         padding: 20px;
@@ -307,4 +326,3 @@ footer a:hover{
 
  }
   
-

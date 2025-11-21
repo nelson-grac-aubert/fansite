@@ -8,19 +8,18 @@
     <title>Update</title>
 </head>
 <body>
-    <header>
+    <header>        
+        <a href="../index.html" ><img id="logo" src="./images/logo_final.png"></a><!--TODO complete link-->
         <nav class="navbar-inline">
             <div class="menu-full">
-                <a href="../index.html" ><img id="logo" src="./images/logo_final.png"></a><!--TODO complete link-->
                 <a class="link" href="./fansite2.html">Accueil</a>
                 <a class="link" href="./news.html">News</a>
                 <a class="link" href="./media.html">Média</a>
                 <a class="link" href="../fansite3/fansite3.html">Dark Souls 3</a>
-                <a class="link" href="../fansite1/fansite1.html">Hollow knight</a>
+                <a class="link" href="../fansite1/fansite1.html">Hollow Knight</a>
             </div>
         </nav>
         <nav class="navbar">
-            <a href="#" ><img id="logo-mobile" src="./images/logo_final.png"></a>
             <input type="checkbox" id="hamburger">
             <label id="hamburger-logo" for="hamburger"><i class="fa fa-bars"></i></label>
             <div class="menu">
@@ -28,26 +27,34 @@
                 <a class="link" href="./news.html">News</a>
                 <a class="link" href="./media.html">Média</a>
                 <a class="link" href="../fansite3/fansite3.html">Dark Souls 3</a>
-                <a class="link" href="../fansite1/fansite1.html">Hollow knight</a>
+                <a class="link" href="../fansite1/fansite1.html">Hollow Knight</a>
             </div>
         </nav>
     </header>
     <main class="full"><!--class not used ?-->
         <h1>Mise a jour</h1>
+        <div id="summary"><p>Liste des articles</p>
+            <details><summary class="sumsum">[Afficher/Masquer]</summary><!--make a list-->
+            <ol>
+            <li><a class="link" href="#article1">Article 1</a></li>
+            <li><a class="link" href="#article2">Article 2</a></li>
+            <li><a class="link" href="#article3">Article 3</a></li></details>
+            </ol>
+        </div>
         <section class="block-section">
-            <article class="block-article-full">
+            <article id="article1" class="block-article-full">
                 <img class="img-news" src="./images/placeholder.svg">
                 <h2 class="h2-centered">sous titre</h2>
                 <p class="p-news"><details><summary> ipsum dolor sit amet consectetur adipisicing</summary> elit. Tempora nostrum enim velit perspiciatis veritatis neque odio? Placeat, quas atque, eum non numquam nemo et repellat autem aspernatur ex adipisci fugiat.</details></p>
             </article>
             <hr>
-            <article class="block-article-full">
+            <article id="article2" class="block-article-full">
                 <img class="img-news" src="./images/placeholder.svg">
                 <h2 class="h2-centered">sous titre</h2>
                 <p class="p-news"><details><summary>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</summary> Atque accusamus nemo facilis assumenda distinctio mollitia suscipit adipisci expedita sit, eligendi consequuntur omnis quia, cum amet totam velit necessitatibus. Non, autem!</details></p>
             </article>
             <hr>
-            <article class="block-article-full">
+            <article id="article3" class="block-article-full">
                 <img class="img-news" src="./images/placeholder.svg">
                 <h2 class="h2-centered">sous titre</h2>
                 <p class="p-news"><details><summary>Lorem ipsum dolor sit amet consectetur adipisicing elit.</summary> Et, iusto quaerat delectus vitae eius aperiam dolore ducimus, iure vero, repellat soluta minus sapiente sunt. Dicta deserunt tenetur ducimus eligendi vitae.</details></p>
@@ -62,7 +69,7 @@
             <a class="link-footer" href="./news.html">News</a>
             <a class="link-footer" href="./media.html">Média</a>
             <a class="link-footer" href="../fansite3/fansite3.html">Dark Souls 3</a>
-            <a class="link-footer" href="../fansite1/fansite1.html">Hollow knight</a>
+            <a class="link-footer" href="../fansite1/fansite1.html">Hollow Knight</a>
         </div>
     </nav>
 </footer>

@@ -72,7 +72,7 @@ c'est ici qu'on déclare les variables CSS */
   /* ne bouge pas en scrollant, fixé en haut a droite */
   position : fixed ; 
   top : var(--hamburger_margin) ;
-  right : var(--hamburger_margin) ;
+  right : calc(var(--hamburger_margin) * 2) ;
 
   z-index: 2; /* supérieur à 0 donc apparait toujours en avant */
 
@@ -450,7 +450,7 @@ un élément avant, un élément après */
 
 .news_text {
   max-width: 100%;
-  font-size : 1rem ;
+  font-size : 1.1rem ;
   margin-top : 0.6rem ;
   margin-bottom : -0.8rem ;
   text-align: justify;
