@@ -158,9 +158,8 @@ audio{
     background:var(--transparent1);/*remove: change*/
     border: 1px solid ;
     overflow: hidden;
-    width: 100px;
+    width: 170px;
     transform: translateX(200px); /*remove or learn*/
-    padding: 10px;
     margin: 5px;
 }
 .menu-full{
@@ -186,7 +185,7 @@ audio{
     padding: 15px ;
 }
 
-.footer-menu{ /*TODO no space bottom*/
+.footer-menu{ 
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -197,10 +196,16 @@ audio{
     border-color: var(--color2);
     
 }
+.link-footer{
+  color: var(--color3);
+  text-decoration: none;
+  
+}
+/*
 .footer-link{
     color: var(--color3);
     text-decoration: none;
-}
+}*/
 footer a:hover{
     color: var(--color2);
 }
@@ -253,7 +258,9 @@ footer a:hover{
     h2{
         align-self: center;
     }
-
+    .navbar-inline{
+        float: right;
+    }
     .menu-full{
     display: flex;
     flex-direction: row;
@@ -265,7 +272,9 @@ footer a:hover{
     .menu-full>.link{
     color: var(--color3);
     }
-    
+    .link{
+        padding: 20px;
+    }
     #hamburger-logo{
        display: none;
     }
@@ -282,6 +291,7 @@ footer a:hover{
     }
     #logo{
         width: 50px;
+        
     }
 
     .img-media{
