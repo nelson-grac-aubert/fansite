@@ -7,9 +7,18 @@
     --transparent1:rgba(36, 37, 67, 0.6); 
     --transparent2:rgba(4, 4, 4, 0.8); /*not used*/
 }
+    /* Style global de la page */
 body{
-    margin:  0;
+    margin: 0;
+    background-image:url("./fansite1/images/Mix_logo-accueil.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    /*display: flex;*/
+    align-items: center;
+    min-height: 100vh;
 }
+/* Conteneur footer */
 .footer-nav{ 
     display: flex;
     flex-direction: row;
@@ -20,6 +29,12 @@ body{
     color: var(--color2);
     align-items: baseline;
 }
+
+.index_container{
+    display: flex;
+    flex-direction: column;
+}
+
 .column{
   /*  border: 1px solid red;*/
     padding: 25px;
@@ -30,6 +45,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    
 }
 footer a{
     color: var(--color3);
@@ -300,3 +316,105 @@ un élément avant, un élément après */
 }
 
 /* BURGER + NAV BAR */
+
+/*DEBUT CARROUSEL*/
+
+/* Conteneur du slider */
+.slider{width: 100%;}
+/* Cacher les inputs */
+.slider input{display: none;}
+
+/* Conteneur des .carrousel items*/
+.carrousel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 350px;
+    perspective: 1000px;
+    overflow:hidden;
+    margin-top: 70px;
+}
+/* Style des slides */
+.carrousel .item {
+    width: 300px;
+    /*padding: 30px;*/
+    border-radius: 5px;
+    background-color: #21262d;
+    position: absolute;
+    border: 3px solid #fff;
+    /*top: 0;*/
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.4s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Style des titres interieurs des slides */
+.carrousel .item h1{font-size: 114px;color: #fff;}
+/*.carrousel .item {
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}*/
+.carrousel .item img{
+    width: 100%;
+    height: fit-content;
+}
+
+/* Position des points */
+.dots{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Style des points */
+.dots label{
+    
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ffffff;
+    margin: 7px;
+    transition-duration: 0.2s;
+}
+/* Style et positionnement des slides en fonction du point selectionné */
+#t-1:checked ~ .dots label[for="t-1"],
+#t-2:checked ~ .dots label[for="t-2"],
+#t-3:checked ~ .dots label[for="t-3"]{
+    transform: scale(2);
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 3px #dddddd24;
+}
+
+#t-1:checked ~ .dots label[for="t-2"],
+#t-2:checked ~ .dots label[for="t-1"],
+#t-2:checked ~ .dots label[for="t-3"],
+#t-3:checked ~ .dots label[for="t-2"]{
+    transform: scale(1,5);
+}
+
+#t-1:checked ~ .carrousel label[for="t-2"],
+#t-2:checked ~ .carrousel label[for="t-3"],
+#t-3:checked ~ .carrousel label[for="t-1"]{   
+    transform: translate3d(300px, 0, -90px) rotateY(-15deg);
+    z-index:3;
+}
+
+#t-2:checked ~ .carrousel label[for="t-1"],
+#t-3:checked ~ .carrousel label[for="t-2"],
+#t-1:checked ~ .carrousel label[for="t-3"] {
+    transform: translate3d(-300px, 0, -90px) rotateY(15deg);
+    z-index: 3;
+}
+
+#t-1:checked ~ .carrousel label[for="t-1"],
+#t-2:checked ~ .carrousel label[for="t-2"],
+#t-3:checked ~ .carrousel label[for="t-3"]{
+  z-index: 4;
+}
+
+/*FIN CARROUSEL*/
