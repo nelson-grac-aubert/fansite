@@ -5,6 +5,9 @@
     --color3:#E7E1CB;
     --color4:#343432;
     --color5:#888B92;
+    --color6:#242543;
+    --color7:#7E8AAC;
+    --color8:#C5E7F0;
     --transparent1:rgba(52, 52, 50, 0.6); /*TODO FIX*/
     --transparent2:rgba(4, 4, 4, 0.8);
 }
@@ -139,6 +142,18 @@ audio{
     position:sticky;
     color: var(--color2);
 }
+.link-ds3{
+    color: var(--color6);
+    text-decoration: none;
+    padding: 10% 20%;
+    font-weight: bold;
+}
+.link-hk{
+     color: var(--color7);/*TODO*/
+    text-decoration: none;
+    padding: 10% 20%;
+    font-style: italic;
+}
 .link{
   color: var(--color3);
   text-decoration: none;
@@ -147,6 +162,7 @@ audio{
 .link:hover{
     color: var(--color2);
 }
+
 
 #hamburger{
     display: none;
@@ -262,6 +278,7 @@ footer a:hover{
     }
     .menu-full>.link{
     color: var(--color3);
+    padding: 15px;
     }
     
     #hamburger-logo{
