@@ -206,7 +206,7 @@ audio{
     padding: 15px ;
 }
 
-.footer-menu{ /*TODO no space bottom*/
+.footer-menu{ 
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -276,7 +276,9 @@ footer a:hover{
     h2{
         align-self: center;
     }
-
+    .navbar-inline{
+        float: right;
+    }
     .menu-full{
     display: flex;
     flex-direction: row;
@@ -289,7 +291,9 @@ footer a:hover{
     color: var(--color3);
     padding: 15px;
     }
-    
+    .link{
+        padding: 20px;
+    }
     #hamburger-logo{
        display: none;
     }
