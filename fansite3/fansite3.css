@@ -3,11 +3,12 @@
 * {
   padding : 0;
   margin : 0;
+  box-sizing: border-box;
 }
 
 a {
-  color: inherit; 
-  text-decoration: inherit;
+  color: white; 
+  text-decoration: none;
 }
 
 body {
@@ -17,6 +18,30 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Stack Sans Text", sans-serif;
+}
+
+.banner_box {
+  width : 100vw ;
+  height : 200px ;
+  background-image: url("pictures/actus_banner.png");
+  background-repeat : no-repeat ;
+  background-size : cover ;
+  background-position: right;
+  display : flex ; 
+  flex-direction: column;
+  justify-content: center;
+  color : #C5E7F0 ; 
+}
+
+.banner_box span {
+  font-size : 1.6rem ;
+  margin-left : 2.5rem ; 
+  margin-right: 2rem ;
+}
+
+.banner_box p {
+  margin-left : 2.5rem ; 
+  margin-right: 2rem ;
 }
 
 /* nav */
@@ -47,7 +72,7 @@ c'est ici qu'on déclare les variables CSS */
   /* ne bouge pas en scrollant, fixé en haut a droite */
   position : fixed ; 
   top : var(--hamburger_margin) ;
-  right : var(--hamburger_margin) ;
+  right : calc(var(--hamburger_margin) * 2) ;
 
   z-index: 2; /* supérieur à 0 donc apparait toujours en avant */
 
@@ -118,7 +143,7 @@ un élément avant, un élément après */
   padding-top: calc(var(--hamburger_menu_height) + var(--hamburger_margin) + 0.5rem);
   background-color: var(--burger_slider_color);
   color: var(--burger_background_color);
-  width: 93.25vw;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   overflow-y: auto;
@@ -154,7 +179,87 @@ un élément avant, un élément après */
   color : #C5E7F0
 }
 
-@media screen and (min-width: 800px) {
+.desktop_nav_bar {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+  padding: 0 15px;
+
+}
+
+.desktop_nav_bar img {
+  height: 15vh;
+  border-radius: 999px;
+  margin-right: 20px;
+}
+
+.buttons_box {
+  display: flex;
+  gap: 15px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown_button {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  padding: 10px 20px;
+  margin-right : 40px ;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.dropdown_button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+
+.dropdown_content a {
+  font-size: 1.2rem ;
+  padding: 18px 20px;
+  display: block;
+}
+
+.dropdown_content a:hover {
+  background-color: #555;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+}
+
+
+@media screen and (max-width: 799px) {
+  .desktop_nav_bar {
+    display: none ;
+  }
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+  .desktop_nav_bar {
+    display: none ;
+  }
+
   .sidebar {
     width: 45vw;
   }
@@ -163,6 +268,20 @@ un élément avant, un élément après */
     font-size: 18px;
   }
 
+}
+
+@media screen and (min-width: 1280px) {
+  .hamburger_menu {
+    display: none;
+  }
+
+  .sidebar {
+    display : none ;
+  }
+
+  .banner_box {
+    display : none ;
+  }
 }
 
 /* footer */
@@ -215,6 +334,28 @@ un élément avant, un élément après */
   color: #ffffff;
 }
 
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+
+.footer_column h4 {
+  font-size: 1.3rem;
+}
+
+.footer_column a {
+  font-size : 1.1rem ;
+}
+
+}
+
+@media screen and (min-width: 1280px) {
+.footer_column h4 {
+  font-size: 1.5rem;
+} 
+
+.footer_column a {
+  font-size : 1.2rem ;
+}
+}
+
 /* accueil */
 
 /* gallerie photos */
@@ -256,38 +397,9 @@ un élément avant, un élément après */
 
 }
 
-
 /* gameplay */
 
-
-
 /* actus */
-
-.banner_box {
-  width : 100vw ;
-  height : 200px ;
-  background-image: url("pictures/actus_banner.png");
-  background-repeat : no-repeat ;
-  background-size : cover ;
-  background-position: right;
-
-  display : flex ; 
-  flex-direction: column;
-  justify-content: center;
-
-  color : #C5E7F0 ; 
-}
-
-.banner_box span {
-  font-size : 1.6rem ;
-  margin-left : 2.5rem ; 
-  margin-right: 2rem ;
-}
-
-.banner_box p {
-  margin-left : 2.5rem ; 
-  margin-right: 2rem ;
-}
 
 .news_container {
   display : flex ;
@@ -330,10 +442,28 @@ un élément avant, un élément après */
 
 .news_text {
   max-width: 100%;
-  font-size : 1rem ;
+  font-size : 1.1rem ;
   margin-top : 0.6rem ;
   margin-bottom : -0.8rem ;
   text-align: justify;
 }
 
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+.news_title {
+  font-size : 1.5rem ;
+}
+.news_text {
+  font-size : 1.2rem ;
+}
+}
 
+@media screen and (min-width: 1280px) {
+.news_title {
+  font-size : 1.7rem ;
+}
+  
+.news_text {
+  font-size : 1.3rem ;
+}
+
+}
