@@ -195,7 +195,7 @@ un élément avant, un élément après */
 }
 
 .desktop_nav_bar img {
-  height: 15vh;
+  height: 25vh;
   border-radius: 999px;
   margin-right: 20px;
 }
@@ -315,8 +315,7 @@ un élément avant, un élément après */
 }
 
 .footer_column img {
-  width: 80%;
-  max-width: 120px;
+  width: 70%;
   height: auto;
   border-radius: 50%;
   margin-bottom: 1rem;
@@ -434,7 +433,7 @@ un élément avant, un élément après */
 }
 
 .news_title {
-  color : #C5E7F0 ;
+  color : #DFCA9D ;
   font-size : 1.4rem ;
   margin-top : 0.6rem ;
   margin-bottom : 0.6rem ;
@@ -446,6 +445,7 @@ un élément avant, un élément après */
   border-radius : 10px;
   margin-top : 0.6rem ;
   margin-bottom : 0.6rem ;
+  
 }
 
 .news_text {
@@ -456,6 +456,19 @@ un élément avant, un élément après */
   text-align: justify;
 }
 
+.news_vertical_banner {
+  display : none ;
+}
+
+.news_author {
+  margin-bottom: -1.5rem;
+  font-size : 0.75rem ;
+  font-style: italic ;
+  margin-top : 0.4rem ;
+  color : grey ;
+  justify-self: flex-end ;
+}
+
 @media screen and (min-width: 800px) and (max-width: 1279px) {
 .news_title {
   font-size : 1.5rem ;
@@ -464,7 +477,12 @@ un élément avant, un élément après */
   font-size : 1.2rem ;
 }
 
-
+.news_container {
+  flex-direction : row ;
+  justify-content: center ;
+  align-items: flex-start ;
+  gap : 20px ;
+}
 }
 
 @media screen and (min-width: 1280px) {
