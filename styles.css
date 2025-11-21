@@ -18,6 +18,14 @@ body{
     align-items: center;
     min-height: 100vh;
 }
+.index_container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+/*-------------------------------------------------------------------*/
+/* DEBUT FOOTER */
 /* Conteneur footer */
 .footer-nav{ 
     display: flex;
@@ -30,18 +38,13 @@ body{
     align-items: baseline;
 }
 
-.index_container{
-    display: flex;
-    flex-direction: column;
-}
-
 .column{
   /*  border: 1px solid red;*/
     padding: 25px;
 }
 .footer-github{
     background-color: var(--color2);
-    height: 10%;
+    height: 17%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -63,7 +66,8 @@ ul{
 .pic-size{
     max-width: 25px;
 }
-
+/* fin footer */
+/*-------------------------------------------------------------------*/
 /* BURGER + NAV BAR */
 
 * {
@@ -105,7 +109,7 @@ c'est ici qu'on déclare les variables CSS */
   top : var(--hamburger_margin) ;
   right : calc(var(--hamburger_margin) * 2) ;
 
-  z-index: 2; /* supérieur à 0 donc apparait toujours en avant */
+  z-index: 100; /* supérieur à 0 donc apparait toujours en avant */
 
   cursor : pointer ; 
 
@@ -178,11 +182,10 @@ un élément avant, un élément après */
   height: 100vh;
   position: fixed;
   overflow-y: auto;
+  z-index: 99;
 }
 
-.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar {
-  translate: 0;
-}
+.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar {translate: 0;}
 
 .burger_links {
   display: flex;
@@ -206,10 +209,10 @@ un élément avant, un élément après */
   color: #C5E7F0 ;
 }
 
-.burger_links a:hover {
-  color : #C5E7F0
-}
-
+.burger_links a:hover {color : #C5E7F0;}
+/*fin burger menu*/
+/*-------------------------------------------------------------------*/
+/* NAV BAR DESKTOP */
 .desktop_nav_bar {
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
@@ -217,7 +220,6 @@ un élément avant, un élément après */
   justify-content: space-between ;
   align-items: center;
   padding: 0 15px;
-
 }
 
 .desktop_nav_bar img {
@@ -231,9 +233,7 @@ un élément avant, un élément après */
   gap: 15px;
 }
 
-.dropdown {
-  position: relative;
-}
+.dropdown {position: relative;}
 
 .dropdown_button {
   background-color: rgba(255, 255, 255, 0);
@@ -247,9 +247,7 @@ un élément avant, un élément après */
   border-radius: 5px;
 }
 
-.dropdown_button:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-}
+.dropdown_button:hover {background-color: rgba(255, 255, 255, 0.05);}
 
 .dropdown_content {
   display: none;
@@ -261,7 +259,6 @@ un élément avant, un élément après */
   z-index: 1;
   border-radius: 5px;
   overflow: hidden;
-
 }
 
 .dropdown_content a {
@@ -270,53 +267,28 @@ un élément avant, un élément après */
   display: block;
 }
 
-.dropdown_content a:hover {
-  background-color: #555;
-}
+.dropdown_content a:hover {background-color: #555;}
 
-.dropdown:hover .dropdown_content {
-  display: block;
-}
-
+.dropdown:hover .dropdown_content {display: block;}
 
 @media screen and (max-width: 799px) {
-  .desktop_nav_bar {
-    display: none ;
-  }
-
+  .desktop_nav_bar {display: none ;}
 }
 
 @media screen and (min-width: 800px) and (max-width: 1279px) {
-  .desktop_nav_bar {
-    display: none ;
-  }
-
-  .sidebar {
-    width: 45vw;
-  }
-
-  .burger_links a {
-    font-size: 18px;
-  }
-
+  .desktop_nav_bar {display: none ;}
+  .sidebar {width: 45vw;}
+  .burger_links a {font-size: 18px;}
 }
 
 @media screen and (min-width: 1280px) {
-  .hamburger_menu {
-    display: none;
-  }
-
-  .sidebar {
-    display : none ;
-  }
-
-  .banner_box {
-    display : none ;
-  }
+  .hamburger_menu {display: none;}
+  .sidebar {display : none ;}
+  .banner_box {display : none ;}
 }
 
-/* BURGER + NAV BAR */
-
+/* Fin nav bar desktop */
+/*-------------------------------------------------------------------*/
 /*DEBUT CARROUSEL*/
 
 /* Conteneur du slider */
@@ -330,20 +302,18 @@ un élément avant, un élément après */
     align-items: center;
     justify-content: center;
     position: relative;
-    min-height: 350px;
+    min-height: 440px;
     perspective: 1000px;
     overflow:hidden;
-    margin-top: 70px;
+    margin-bottom: 30px;
 }
 /* Style des slides */
 .carrousel .item {
     width: 300px;
     /*padding: 30px;*/
-    border-radius: 5px;
+    border-radius: 30px;
     background-color: #21262d;
     position: absolute;
-    border: 3px solid #fff;
-    /*top: 0;*/
     box-sizing: border-box;
     text-align: center;
     transition: transform 0.4s;
@@ -351,9 +321,13 @@ un élément avant, un élément après */
     user-select: none;
     cursor: pointer;
 }
-
+.item p{
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+}
 /* Style des titres interieurs des slides */
-.carrousel .item h1{font-size: 114px;color: #fff;}
+.carrousel .item img{border-radius: 30px;}
 /*.carrousel .item {
     background-size: cover;
     background-position: center;
@@ -394,20 +368,20 @@ un élément avant, un élément après */
 #t-2:checked ~ .dots label[for="t-1"],
 #t-2:checked ~ .dots label[for="t-3"],
 #t-3:checked ~ .dots label[for="t-2"]{
-    transform: scale(1,5);
+    transform: scale(1.5);
 }
 
 #t-1:checked ~ .carrousel label[for="t-2"],
 #t-2:checked ~ .carrousel label[for="t-3"],
 #t-3:checked ~ .carrousel label[for="t-1"]{   
-    transform: translate3d(300px, 0, -90px) rotateY(-15deg);
+    transform: translate3d(325px, 0, -90px) rotateY(-15deg);
     z-index:3;
 }
 
 #t-2:checked ~ .carrousel label[for="t-1"],
 #t-3:checked ~ .carrousel label[for="t-2"],
 #t-1:checked ~ .carrousel label[for="t-3"] {
-    transform: translate3d(-300px, 0, -90px) rotateY(15deg);
+    transform: translate3d(-325px, 0, -90px) rotateY(15deg);
     z-index: 3;
 }
 
