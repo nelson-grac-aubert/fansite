@@ -56,7 +56,7 @@ c'est ici qu'on déclare les variables CSS */
   --burger_slider_color : rgba(0, 0, 0, 0.9) ; 
   /* ease-in-out : début et fin rapide */
   --burger_animation_time : 300ms ease-in-out ;
-  --hamburger_margin : 10px ; 
+  --hamburger_margin : 15px ; 
 
   /* on calcule la hauteur de l'élement en entier pour déterminer la longueur
   finale des barres quand elles se transforment en croix */
@@ -72,7 +72,7 @@ c'est ici qu'on déclare les variables CSS */
   /* ne bouge pas en scrollant, fixé en haut a droite */
   position : fixed ; 
   top : var(--hamburger_margin) ;
-  right : calc(var(--hamburger_margin) * 2) ;
+  right : var(--hamburger_margin) ;
 
   z-index: 2; /* supérieur à 0 donc apparait toujours en avant */
 
@@ -181,7 +181,12 @@ un élément avant, un élément après */
 
 .desktop_nav_bar {
   background-color: rgba(0, 0, 0, 0.3);
+  background-image: url(pictures/actus_banner.png);
+  background-repeat : no-repeat ;
+  background-size : cover ;
+  background-position: top right;
   width: 100%;
+  height : 180px ;
   display: flex;
   justify-content: space-between ;
   align-items: center;
@@ -190,7 +195,7 @@ un élément avant, un élément après */
 }
 
 .desktop_nav_bar img {
-  height: 15vh;
+  height: 25vh;
   border-radius: 999px;
   margin-right: 20px;
 }
@@ -214,10 +219,11 @@ un élément avant, un élément après */
   font-family: inherit;
   font-size: 1.2rem;
   border-radius: 5px;
+  border-bottom-left-radius: 0px;
 }
 
 .dropdown_button:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .dropdown_content {
@@ -229,6 +235,7 @@ un élément avant, un élément après */
   min-width: 160px;
   z-index: 1;
   border-radius: 5px;
+  border-top-left-radius: 0px ;
   overflow: hidden;
 
 }
@@ -308,8 +315,7 @@ un élément avant, un élément après */
 }
 
 .footer_column img {
-  width: 80%;
-  max-width: 120px;
+  width: 70%;
   height: auto;
   border-radius: 50%;
   margin-bottom: 1rem;
@@ -367,6 +373,7 @@ un élément avant, un élément après */
   padding : 40px 0px ; 
 
   display : flex ; 
+  justify-content: center;
   gap : 20px ;
 }
 
@@ -426,7 +433,7 @@ un élément avant, un élément après */
 }
 
 .news_title {
-  color : #C5E7F0 ;
+  color : #DFCA9D ;
   font-size : 1.4rem ;
   margin-top : 0.6rem ;
   margin-bottom : 0.6rem ;
@@ -438,14 +445,28 @@ un élément avant, un élément après */
   border-radius : 10px;
   margin-top : 0.6rem ;
   margin-bottom : 0.6rem ;
+  
 }
 
 .news_text {
   max-width: 100%;
-  font-size : 1.1rem ;
+  font-size : 1rem ;
   margin-top : 0.6rem ;
   margin-bottom : -0.8rem ;
   text-align: justify;
+}
+
+.news_vertical_banner {
+  display : none ;
+}
+
+.news_author {
+  margin-bottom: -1.5rem;
+  font-size : 0.75rem ;
+  font-style: italic ;
+  margin-top : 0.4rem ;
+  color : grey ;
+  justify-self: flex-end ;
 }
 
 @media screen and (min-width: 800px) and (max-width: 1279px) {
@@ -455,12 +476,20 @@ un élément avant, un élément après */
 .news_text {
   font-size : 1.2rem ;
 }
+
+.news_container {
+  flex-direction : row ;
+  justify-content: center ;
+  align-items: flex-start ;
+  gap : 20px ;
+}
 }
 
 @media screen and (min-width: 1280px) {
 .news_title {
   font-size : 1.7rem ;
 }
+
   
 .news_text {
   font-size : 1.3rem ;
