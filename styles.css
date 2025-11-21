@@ -402,13 +402,6 @@ un élément avant, un élément après */
 
 /*FORMULAIRE DE CONTACT*/
 
-/* .whole_contact_page {
-  background-image: url(fansite3/pictures/fond_acceuil.webp);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-} */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
@@ -425,8 +418,7 @@ un élément avant, un élément après */
   padding: 40px;
   background-color: rgba(0, 0, 0, 0.7);
   margin : 20px 0px ;
-  
-  
+
 }
 
 .form-section h2, .info-section h2 {
@@ -471,7 +463,6 @@ form button:hover {
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
-      
   }
 
   .form-section, .info-section {
@@ -479,9 +470,7 @@ form button:hover {
     width: 100%;        
     margin: 0 ;  
     height : auto ;
-    
   }
-
 }
 
 
