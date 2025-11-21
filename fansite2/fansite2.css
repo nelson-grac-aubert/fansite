@@ -50,9 +50,7 @@ p, details,summary{
     color: var(--color3);
     font-family: "montserrat";
 }
-#logo{
-    height: 100%;
-}
+
 header{
     width:100%;
     height:50px;
@@ -60,12 +58,14 @@ header{
     margin: 0;/*TODO fondu transparent ?*/
     border: 1px solid;
     border-color: var(--color2);
+    display: flex;
+    justify-content: space-between;
 } 
 .logo-CO{
     margin-bottom: 50px;
 }
 
-#logo-mobile{
+#logo{
     height: 50px;
     /*move left*/
     align-content: start;
@@ -154,13 +154,11 @@ audio{
 .menu {
     display: none;
     flex-direction: column;
-    align-items: end;
     background:var(--transparent1);/*remove: change*/
     border: 1px solid ;
     overflow: hidden;
-    width: 100px;
+    width: 150px;
     transform: translateX(200px); /*remove or learn*/
-    padding: 10px;
     margin: 5px;
 }
 .menu-full{
@@ -197,7 +195,7 @@ audio{
     border-color: var(--color2);
     
 }
-.footer-link{
+.link-footer{
     color: var(--color3);
     text-decoration: none;
 }
@@ -282,6 +280,7 @@ footer a:hover{
     }
     #logo{
         width: 50px;
+        
     }
 
     .img-media{
