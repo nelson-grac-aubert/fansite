@@ -254,7 +254,7 @@ un élément avant, un élément après */
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   min-width: 160px;
   z-index: 1;
   border-radius: 5px;
@@ -267,7 +267,13 @@ un élément avant, un élément après */
   display: block;
 }
 
-.dropdown_content a:hover {background-color: #555;}
+.dropdown_content a:hover {
+  color : #75dcf8;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+}
 
 .dropdown:hover .dropdown_content {display: block;}
 
@@ -392,3 +398,84 @@ un élément avant, un élément après */
 }
 
 /*FIN CARROUSEL*/
+
+/*FORMULAIRE DE CONTACT*/
+
+.whole_contact_page {
+  background-image: url(fansite3/pictures/fond_acceuil.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.form-section, .info-section {
+  /* flex : 1= peut grow 1=peut shrink 
+  370px = taille de base avant grow ou shrink */
+  flex: 1 1 370px;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin : 20px 0px ;
+  
+}
+
+.form-section h2, .info-section h2 {
+  margin-bottom: 20px;
+  color: #C5E7F0;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #7E8AAC;
+}
+
+form input::placeholder, form textarea::placeholder {
+  color : black ;
+}
+
+form button {
+  background-color: #242543;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #3c3e87;
+}
+
+.info-section p {
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .form-section, .info-section {
+    margin: 0px;
+  }
+}
+
+
+
+/*FIN FORMULAIRE DE CONTACT*/

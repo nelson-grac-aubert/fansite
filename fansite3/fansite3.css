@@ -231,7 +231,7 @@ un élément avant, un élément après */
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   min-width: 160px;
   z-index: 1;
   border-radius: 5px;
@@ -247,7 +247,7 @@ un élément avant, un élément après */
 }
 
 .dropdown_content a:hover {
-  background-color: #555;
+  color : #75dcf8;
 }
 
 .dropdown:hover .dropdown_content {
