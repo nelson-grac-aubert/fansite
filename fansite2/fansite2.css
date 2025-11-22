@@ -23,13 +23,12 @@
     --color1:#242543;
     --color2:#7E8AAC;
     --color5:#E7E1CB;
-    --color4:#040404; /*not used?*/
+    --color4:#040404; 
     --color3:#C5E7F0;
     --transparent1:rgba(52, 52, 50, 0.6); 
     --transparent2:rgba(36, 37, 67, 0.8);
         }
 }
-
 body{ /*TODO change bg for desktop*/
     background-image: url(https://static.wixstatic.com/media/52610a_07dd415d65a04d9ba7f18a3110eef10f~mv2.png/v1/fill/w_3206%2Ch_826%2Cal_c%2Cq_95%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/BackgroundTILE.png);
     background-color: var(--color1);
@@ -37,7 +36,6 @@ body{ /*TODO change bg for desktop*/
     flex-direction: column;
     margin: 0;
 }
-
 h1{
     color: var(--color2);
     font-family: "playfair-display";
@@ -52,17 +50,16 @@ h1{
     color: var(--color2);
     font-family:"playfair-display";
 }
-p, details,summary{
+p,details,summary{
     padding-left: 20px;
     color: var(--color3);
     font-family: "montserrat";
 }
-
 header{
     width:100%;
     height:50px;
     background-color:var(--color1);
-    margin: 0;/*TODO fondu transparent ?*/
+    margin: 0;
     border: 1px solid;
     border-color: var(--color2);
     display: flex;
@@ -71,13 +68,9 @@ header{
 .logo-CO{
     margin-bottom: 50px;
 }
-
 #logo{
     height: 50px;
-    /*move left*/
-    align-content: start;
 }
-
 main{
     margin: 50px;
     display: flex;
@@ -85,35 +78,39 @@ main{
     align-items: center;
     margin-bottom: 0;
 }
-
 #summary{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
     border: 1px solid var(--color4);
     background-color: var(--transparent1);
-    margin-bottom: 15px;
-    width: 100%;
+    width: auto;
+    margin:25px;
+    padding-right: 20px;
+}
+.link-summary{
+    color: var(--color3);
+    text-decoration: none;
 }
 .sumsum{
-    margin: 5%;
+    display:flex;
+    flex-direction: column;
+    list-style: none;
 }
-
 .block-article{
     display: flex;
-    flex-direction: column; /*no margin*/
-    background-color: var(--color1);
-    opacity: 70%;
+    flex-direction: column; 
+    background-color: var(--transparent2);
+    /*opacity: 70%;*/
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
     border: 1px solid var(--color2);
-   
-    
 }
 .block-article-full{
     display: flex;
-    flex-direction: column; /*no margin*/
+    flex-direction: column; 
     background-color: var(--transparent2);
-    /*opacity: 70%;*/
     margin-bottom: 20px;
     width: auto;
     border: 1px solid;
@@ -123,6 +120,9 @@ main{
     display: flex;
     flex-direction: column;
     background-color: var(--transparent1);
+}
+.img-news{
+        max-width:400px;
 }
 hr{
     color:var(--color2);
@@ -144,9 +144,8 @@ audio{
     border-color: var(--color2);
     background-color: var(--color3);
 }
-
-/*hamburger*/
-#hamburger-logo{  /*TODO fix pointer*/
+/*hamburger +nav*/
+#hamburger-logo{
     float: right;
     margin-right: 10px;
     cursor:pointer;
@@ -157,7 +156,6 @@ audio{
     position:sticky;
     color: var(--color2);
 }
-
 .link{
   color: var(--color3);
   text-decoration: none;
@@ -166,21 +164,18 @@ audio{
 .link:hover{
     color: var(--color2);
     text-decoration: none;
-
 }
-
-
 #hamburger{
     display: none;
 }
 .menu {
     display: none;
     flex-direction: column;
-    background:var(--transparent1);/*remove: change*/
+    background:var(--transparent1);
     border: 1px solid ;
     overflow: hidden;
     width: 150px;
-    transform: translateX(200px); /*remove or learn*/
+   /* transform: translateX(200px);*/
     margin: 5px;
 }
 .menu-full{
@@ -188,24 +183,21 @@ audio{
 }
 #hamburger:checked ~ #hamburger-logo,
 #hamburger:checked ~ .menu {
-  transform: translate(0px); /*remove l8er*/
+  /*transform: translate(0px); */
   display: flex;
 }
- /*img,p{
-        min-width: ;  change to class
-    }*/
+/*gallery*/
 .masonry-display{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 .img-media{
     width: 100%;
     height: auto;
     padding: 15px ;
 }
-
+/*footer*/
 .footer-menu{ 
     display: flex;
     flex-direction: row;
@@ -215,12 +207,10 @@ audio{
     background-color:var(--color1);
     border: 1px solid;
     border-color: var(--color2);
-    
 }
 .link-footer{
     color: var(--color3);
     text-decoration: none;
-
 }
 footer a:hover{
     color: var(--color2);
@@ -228,15 +218,18 @@ footer a:hover{
 
 }
 /*tablet*/
-@media (min-width: 425px) and(max-width: 1024px)  {/*TODO change media query and verify nothing fucks up*/
+@media (min-width: 426px) and(max-width: 1023px)  {/*TODO change media query and verify nothing fucks up*/
     
 
 
 }
 
 /*laptop*/
-@media (min-width: 1025px) {
-    
+@media (min-width: 1024px) {
+ /*body*/   
+    body{
+        background:();/*TODO change bg for desktop*/
+    }
     .block-div-left{
         align-self: start;
     }
@@ -247,49 +240,49 @@ footer a:hover{
         padding: 0 20px 20px 20px;
         margin-bottom: 25%;
     }
-
     .block-article-full{
-         background-color: var(--color1);
-         opacity: 70%;
+        background-color: var(--color1);
+        opacity: 70%;
         padding: 0 20px;
         width: 1000px;
     }
-
-
     .img-homepage,p{
-        max-width: 400px;/*change to class*/
+        max-width: 400px;
     }
     .img-news,.p-news{
         align-self: center;
         max-width: 100%;
     }
     #logo-mobile{ display: none;}
-
     .text-right{
-    display: flex;
-    flex-direction: row; /*no margin*/
+        display: flex;
+        flex-direction: row;
     }
     .text-left{
-    display: flex;
-    flex-direction: row-reverse; /*no margin*/
+        display: flex;
+        flex-direction: row-reverse;
     }
     h2{
         align-self: center;
     }
+    #summary{
+        width:25%;
+    }
+/*hambuger + nav*/
     .navbar-inline{
         float: right;
     }
     .menu-full{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height:50px;
-    width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height:50px;
+        width: fit-content;
     }
     .menu-full>.link{
-    color: var(--color3);
-    padding: 15px;
+        color: var(--color3);
+        padding: 15px;
     }
     .link{
         padding: 20px;
@@ -301,24 +294,20 @@ footer a:hover{
     cursor: pointer;
     text-decoration: underline;
     }
-    
-        /*gallery display*/
+ /*gallery*/
     .masonry-display {
-        display: block;
-    column-count:5;
+    display: block;
+    column-count:4;
     column-gap: 30px;
     }
     #logo{
         width: 50px;
-        
     }
-
     .img-media{
         width: 100%;
         height: auto;
         padding: 15px ;
     }
- 
     .music-box{
         width: 25%;
         align-self: start;
