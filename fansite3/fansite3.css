@@ -191,6 +191,8 @@ un élément avant, un élément après */
   justify-content: space-between ;
   align-items: center;
   padding: 0 15px;
+  position: relative;
+  z-index: 999;
 
 }
 
@@ -233,11 +235,9 @@ un élément avant, un élément après */
   left: 0;
   background-color: rgba(0, 0, 0, 0.9);
   min-width: 160px;
-  z-index: 1;
   border-radius: 5px;
   border-top-left-radius: 0px ;
   overflow: hidden;
-
 }
 
 .dropdown_content a {
@@ -254,15 +254,24 @@ un élément avant, un élément après */
   display: block;
 }
 
+/* si le dropdown est survolé, ou la sidebar est activée, 
+on désactive les clics sur la vidéo
+le selecteur ~ cible tous les frères suivants dans la meme div*/
+.desktop_nav_bar:has(.dropdown:hover) ~ .gameplay_container .trailer_video {
+  pointer-events: none;
+}
+.hamburger_menu:has(input:checked) ~ .sidebar_container ~ .gameplay_container .trailer_video {
+  pointer-events: none;
+}
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 424px) {
   .desktop_nav_bar {
     display: none ;
   }
 
 }
 
-@media screen and (min-width: 800px) and (max-width: 1279px) {
+@media screen and (min-width: 425px) and (max-width: 1023px) {
   .desktop_nav_bar {
     display: none ;
   }
@@ -277,7 +286,7 @@ un élément avant, un élément après */
 
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .hamburger_menu {
     display: none;
   }
@@ -340,7 +349,7 @@ un élément avant, un élément après */
   color: #ffffff;
 }
 
-@media screen and (min-width: 800px) and (max-width: 1279px) {
+@media screen and (min-width: 425px) and (max-width: 1023px) {
 
 .footer_column h4 {
   font-size: 1.3rem;
@@ -352,7 +361,7 @@ un élément avant, un élément après */
 
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
 .footer_column h4 {
   font-size: 1.5rem;
 } 
@@ -391,7 +400,7 @@ un élément avant, un élément après */
   object-fit: cover;
 }
  
-@media screen and (max-width:799px) {
+@media screen and (max-width:424px) {
 
 .photo_gallery {
   flex-direction : column;
@@ -399,17 +408,86 @@ un élément avant, un élément après */
   }
 
 .gallery_column {
-  width : 80%;
+  width : 92%;
 }
 
 }
 
 /* gameplay */
 
+.gameplay_container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0 4rem 0;
+  color: white; 
+}
+
 .trailer_video {
-  width : 80vw ; 
-  aspect-ratio: 16 / 9 ;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+}
+
+.gameplay_container h2 {
+  color: #DFCA9D;
+  margin-bottom: 1rem;
+}
+
+.gameplay_pic {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.gameplay_description,
+.gameplay_weapons,
+.gameplay_lore {
+  width: 90%;
+  max-width: 800px;
   
+  background-color: rgba(0, 0, 0, 0.3); 
+  border-radius: 20px;               
+  padding: 20px
+}
+
+.gameplay_description p,
+.gameplay_weapons p,
+.gameplay_lore p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .gameplay_container {
+    justify-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .trailer_video {
+    width: 100%;  
+    max-width: 1224px;
+    margin-bottom: 2rem;
+  }
+
+  .gameplay_description,
+  .gameplay_weapons {
+    flex: 1 1 45%;   
+    margin: 1rem;
+    max-width: 600px;   
+  }
+
+  .gameplay_lore {
+    flex: 1 1 100%;      
+    margin: 1rem;
+  }
 }
 
 /* actus */
@@ -434,7 +512,7 @@ un élément avant, un élément après */
 
 .news_title {
   color: #DFCA9D;
-  font-size: 1.2rem; /* plus petit sur mobile */
+  font-size: 1.2rem;
   margin: 0.6rem 0;
 }
 
