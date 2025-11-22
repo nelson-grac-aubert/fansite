@@ -30,18 +30,19 @@
         }
 }
 body{ /*TODO change bg for desktop*/
-    background-image: url(https://static.wixstatic.com/media/52610a_07dd415d65a04d9ba7f18a3110eef10f~mv2.png/v1/fill/w_3206%2Ch_826%2Cal_c%2Cq_95%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/BackgroundTILE.png);
+    background-image:url(https://static.wixstatic.com/media/52610a_549edd34a6334553b74ade3490813210~mv2.webp/v1/fill/w_1615,h_734,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/52610a_549edd34a6334553b74ade3490813210~mv2.webp);/*TODO change bg for desktop*/
+    background-attachment: fixed;
     background-color: var(--color1);
     display: flex;
     flex-direction: column;
     margin: 0;
 }
 h1{
-    color: var(--color2);
+    color: var(--color5);
     font-family: "playfair-display";
+    padding-bottom: 20px;
 }
 .h2-left{
-    padding-left: 50px;
     color: var(--color2);
     font-family:"playfair-display";
 }
@@ -66,6 +67,7 @@ header{
     justify-content: space-between;
 } 
 .logo-CO{
+    width: 200px;
     margin-bottom: 50px;
 }
 #logo{
@@ -84,9 +86,8 @@ main{
     align-self: baseline;
     border: 1px solid var(--color4);
     background-color: var(--transparent1);
-    width: auto;
+    max-width: 200px;
     margin:25px;
-    padding-right: 20px;
 }
 .link-summary{
     color: var(--color3);
@@ -101,18 +102,18 @@ main{
     display: flex;
     flex-direction: column; 
     background-color: var(--transparent2);
-    /*opacity: 70%;*/
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
     border: 1px solid var(--color2);
+    width: 250px;
 }
 .block-article-full{
     display: flex;
     flex-direction: column; 
     background-color: var(--transparent2);
     margin-bottom: 20px;
-    width: auto;
+    width: 250px;
     border: 1px solid;
     border-color: var(--color2);
 }
@@ -121,8 +122,11 @@ main{
     flex-direction: column;
     background-color: var(--transparent1);
 }
+.img-homepage,p{
+    width: 200px;
+}
 .img-news{
-        max-width:400px;
+    max-width:400px;
 }
 hr{
     color:var(--color2);
@@ -133,13 +137,14 @@ hr{
     align-items: start;
 }
 .music-box{
-    width:50%;
+    width:200px;
     display: flex;
     flex-direction: column;
     align-items: start;
 }
 audio{
     margin-top: 15px;
+    width: 80%;
     border:1px solid;
     border-color: var(--color2);
     background-color: var(--color3);
@@ -175,15 +180,13 @@ audio{
     border: 1px solid ;
     overflow: hidden;
     width: 150px;
-   /* transform: translateX(200px);*/
-    margin: 5px;
+    margin: 0 5px;
 }
 .menu-full{
     display: none;
 }
 #hamburger:checked ~ #hamburger-logo,
 #hamburger:checked ~ .menu {
-  /*transform: translate(0px); */
   display: flex;
 }
 /*gallery*/
@@ -195,7 +198,7 @@ audio{
 .img-media{
     width: 100%;
     height: auto;
-    padding: 15px ;
+    padding: 15px;
 }
 /*footer*/
 .footer-menu{ 
@@ -215,21 +218,45 @@ audio{
 footer a:hover{
     color: var(--color2);
     text-decoration: none;
-
 }
 /*tablet*/
-@media (min-width: 426px) and(max-width: 1023px)  {/*TODO change media query and verify nothing fucks up*/
-    
-
-
+@media (min-width: 426px)   {/*TODO change media query and verify nothing fucks up*/
+    /*body*/
+    #summary{
+        width: 300px;
+    }
+   .block-article{
+        width:auto;
+    }
+    .img-homepage,p{
+        width: 400px;
+    }
+    .h2-left{
+        padding-right: 25px;
+        padding-left: 50px;
+    }
+    .masonry-display {
+        display: block;
+        column-count:3;
+        column-gap: 30px;
+    }
+    .audio{
+        width:100%;
+    }
+    .music-box{
+        width: 300px;
+    }
+    .block-article-full{
+        width:auto ;
+    }
+    .img-news{
+        align-self:center;
+        max-width: 100%;
+    }
 }
-
 /*laptop*/
 @media (min-width: 1024px) {
  /*body*/   
-    body{
-        background:();/*TODO change bg for desktop*/
-    }
     .block-div-left{
         align-self: start;
     }
@@ -237,6 +264,7 @@ footer a:hover{
         align-self: end;
     }
     .block-article{
+        width: auto;
         padding: 0 20px 20px 20px;
         margin-bottom: 25%;
     }
@@ -251,7 +279,6 @@ footer a:hover{
     }
     .img-news,.p-news{
         align-self: center;
-        max-width: 100%;
     }
     #logo-mobile{ display: none;}
     .text-right{
@@ -267,6 +294,7 @@ footer a:hover{
     }
     #summary{
         width:25%;
+        
     }
 /*hambuger + nav*/
     .navbar-inline{
@@ -296,7 +324,6 @@ footer a:hover{
     }
  /*gallery*/
     .masonry-display {
-    display: block;
     column-count:4;
     column-gap: 30px;
     }
@@ -309,7 +336,6 @@ footer a:hover{
         padding: 15px ;
     }
     .music-box{
-        width: 25%;
         align-self: start;
     }
 
