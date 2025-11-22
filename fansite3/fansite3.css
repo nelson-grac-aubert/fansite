@@ -406,93 +406,72 @@ un élément avant, un élément après */
 
 /* gameplay */
 
+.trailer_video {
+  width : 80vw ; 
+  aspect-ratio: 16 / 9 ;
+  
+}
+
 /* actus */
 
 .news_container {
-  display : flex ;
+  width: 100vw;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.news_column {
-  width : 92vw ;
-  display : flex ; 
-  flex-direction: column;
-}
-
 .news_article {
-  color : white ; 
-  max-width: 100%;
-  margin-top : 2rem ;
-  margin-bottom : 0 ;
-  justify-self: center;
-
-  background-color: rgba(0, 0, 0, 0.300);
-  border-radius: 20px ;
-  padding : 12px 20px 30px 20px; 
+  color: white;
+  width: 90%;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 12px 20px 40px 20px;
 }
 
 .news_title {
-  color : #DFCA9D ;
-  font-size : 1.4rem ;
-  margin-top : 0.6rem ;
-  margin-bottom : 0.6rem ;
+  color: #DFCA9D;
+  font-size: 1.2rem; /* plus petit sur mobile */
+  margin: 0.6rem 0;
+}
+
+.news_text {
+  font-size: 1rem;
+  text-align: justify;
+  margin: 0.6rem 0 -0.8rem 0;
 }
 
 .news_picture {
-  width : 100%;
-  height : auto;
-  border-radius : 10px;
-  margin-top : 0.6rem ;
-  margin-bottom : 0.6rem ;
-  
-}
-
-.news_text {
-  max-width: 100%;
-  font-size : 1.1rem ;
-  margin-top : 0.6rem ;
-  margin-bottom : -0.8rem ;
-  text-align: justify;
-}
-
-.news_vertical_banner {
-  display : none ;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0.6rem 0;
 }
 
 .news_author {
-  margin-bottom: -1.5rem;
-  font-size : 0.75rem ;
-  font-style: italic ;
-  margin-top : 0.4rem ;
-  color : grey ;
-  justify-self: flex-end ;
+  justify-self: flex-end;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: grey;
+  margin-top : 1.5rem ;
+  margin-bottom : -1.6rem ;
+  padding-top: 0.6rem;              
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 
-@media screen and (min-width: 800px) and (max-width: 1279px) {
-.news_title {
-  font-size : 1.5rem ;
-}
-.news_text {
-  font-size : 1.2rem ;
-}
+@media screen and (min-width: 1024px) {
+  .news_container {
+    flex-direction: row;       
+    flex-wrap: wrap;         
+    justify-content: center;  
+    align-items: flex-start;  
+  }
 
-.news_container {
-  flex-direction : row ;
-  justify-content: center ;
-  align-items: flex-start ;
-  gap : 20px ;
-}
-}
-
-@media screen and (min-width: 1280px) {
-.news_title {
-  font-size : 1.7rem ;
-}
-
-  
-.news_text {
-  font-size : 1.3rem ;
-}
-
+  .news_article {
+    width: 45%;             
+    margin: 1rem;            
+  }
 }
