@@ -18,6 +18,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Stack Sans Text", sans-serif;
+  
 }
 
 .banner_box {
@@ -193,7 +194,6 @@ un élément avant, un élément après */
   padding: 0 15px;
   position: relative;
   z-index: 999;
-
 }
 
 .desktop_nav_bar img {
@@ -268,7 +268,6 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
   .desktop_nav_bar {
     display: none ;
   }
-
 }
 
 @media screen and (min-width: 425px) and (max-width: 1023px) {
@@ -283,7 +282,6 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
   .burger_links a {
     font-size: 18px;
   }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -373,6 +371,139 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
 
 /* accueil */
 
+.index_container {
+  width : 100vw ;
+  display : flex ; 
+  flex-direction : column ;
+  justify-content : center ;
+  align-items : center ;
+  gap : 20px ;
+}
+
+.index_container h1 {
+  color : #DFCA9D ;
+  font-size : 2rem ;
+  text-align : center ;
+  margin : 30px 20px 10px 20px ;
+}
+
+.index_container p {
+  color : white ;
+  font-size : 1.2rem ;
+  text-align : center ;
+  margin : 0px 20px 10px 20px ; 
+}
+
+.index_picture {
+  width : 90% ;
+  max-width : 1224px ;
+  border-radius : 10px ;
+}
+
+.dlc_container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.dlc_container h2 {
+  color: #DFCA9D;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0px 20px 10px 20px;
+}
+
+.dlc_pictures {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 90%;
+}
+
+.dlc_picture {
+  width: 100%;
+  border-radius: 10px;
+   aspect-ratio : 3/4 ; 
+  object-fit : cover ;
+}
+
+.dlc_container p {
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0px 20px 20px 20px;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* Tablette : 426px à 1023px */
+@media (min-width: 426px) and (max-width: 1023px) {
+  .index_container h1 {
+    font-size: 2.4rem;
+  }
+
+  .index_container p {
+    font-size: 1.3rem;
+  }
+
+  .dlc_container h2 {
+    font-size: 1.8rem;
+  }
+
+  .dlc_pictures {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .dlc_picture {
+    width: 48%;
+  }
+
+  .dlc_container p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .index_container h1 {
+    font-size: 2.8rem;
+    margin: 40px 20px 20px 20px;
+  }
+
+  .index_container p {
+    font-size: 1.4rem;
+    max-width: 1224px;
+  }
+
+  .dlc_container {
+    gap: 30px;
+  }
+
+  .dlc_container h2 {
+    font-size: 2rem;
+  }
+
+  .dlc_pictures {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+  }
+
+  .dlc_picture {
+    width: 45%;
+    max-width: 600px;
+  }
+
+  .dlc_container p {
+    font-size: 1.3rem;
+    max-width: 1224px;
+  }
+}
+
 /* gallerie photos */
 
 .photo_gallery {
@@ -410,7 +541,6 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
 .gallery_column {
   width : 92%;
 }
-
 }
 
 /* gameplay */
@@ -550,6 +680,14 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
 
   .news_article {
     width: 45%;             
-    margin: 1rem;            
+    margin: 1rem;           
+  }
+
+  .news_title {
+    font-size: 1.5rem;      
+  }
+
+  .news_article p {
+    font-size: 1.15rem;      
   }
 }
