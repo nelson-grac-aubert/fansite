@@ -18,6 +18,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "Stack Sans Text", sans-serif;
+  
 }
 
 .banner_box {
@@ -191,7 +192,8 @@ un élément avant, un élément après */
   justify-content: space-between ;
   align-items: center;
   padding: 0 15px;
-
+  position: relative;
+  z-index: 999;
 }
 
 .desktop_nav_bar img {
@@ -233,11 +235,9 @@ un élément avant, un élément après */
   left: 0;
   background-color: rgba(0, 0, 0, 0.9);
   min-width: 160px;
-  z-index: 1;
   border-radius: 5px;
   border-top-left-radius: 0px ;
   overflow: hidden;
-
 }
 
 .dropdown_content a {
@@ -254,15 +254,23 @@ un élément avant, un élément après */
   display: block;
 }
 
+/* si le dropdown est survolé, ou la sidebar est activée, 
+on désactive les clics sur la vidéo
+le selecteur ~ cible tous les frères suivants dans la meme div*/
+.desktop_nav_bar:has(.dropdown:hover) ~ .gameplay_container .trailer_video {
+  pointer-events: none;
+}
+.hamburger_menu:has(input:checked) ~ .sidebar_container ~ .gameplay_container .trailer_video {
+  pointer-events: none;
+}
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 424px) {
   .desktop_nav_bar {
     display: none ;
   }
-
 }
 
-@media screen and (min-width: 800px) and (max-width: 1279px) {
+@media screen and (min-width: 425px) and (max-width: 1023px) {
   .desktop_nav_bar {
     display: none ;
   }
@@ -274,10 +282,9 @@ un élément avant, un élément après */
   .burger_links a {
     font-size: 18px;
   }
-
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .hamburger_menu {
     display: none;
   }
@@ -340,7 +347,7 @@ un élément avant, un élément après */
   color: #ffffff;
 }
 
-@media screen and (min-width: 800px) and (max-width: 1279px) {
+@media screen and (min-width: 425px) and (max-width: 1023px) {
 
 .footer_column h4 {
   font-size: 1.3rem;
@@ -352,7 +359,7 @@ un élément avant, un élément après */
 
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
 .footer_column h4 {
   font-size: 1.5rem;
 } 
@@ -363,6 +370,139 @@ un élément avant, un élément après */
 }
 
 /* accueil */
+
+.index_container {
+  width : 100vw ;
+  display : flex ; 
+  flex-direction : column ;
+  justify-content : center ;
+  align-items : center ;
+  gap : 20px ;
+}
+
+.index_container h1 {
+  color : #DFCA9D ;
+  font-size : 2rem ;
+  text-align : center ;
+  margin : 30px 20px 10px 20px ;
+}
+
+.index_container p {
+  color : white ;
+  font-size : 1.2rem ;
+  text-align : center ;
+  margin : 0px 20px 10px 20px ; 
+}
+
+.index_picture {
+  width : 90% ;
+  max-width : 1224px ;
+  border-radius : 10px ;
+}
+
+.dlc_container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.dlc_container h2 {
+  color: #DFCA9D;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0px 20px 10px 20px;
+}
+
+.dlc_pictures {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 90%;
+}
+
+.dlc_picture {
+  width: 100%;
+  border-radius: 10px;
+   aspect-ratio : 3/4 ; 
+  object-fit : cover ;
+}
+
+.dlc_container p {
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0px 20px 20px 20px;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* Tablette : 426px à 1023px */
+@media (min-width: 426px) and (max-width: 1023px) {
+  .index_container h1 {
+    font-size: 2.4rem;
+  }
+
+  .index_container p {
+    font-size: 1.3rem;
+  }
+
+  .dlc_container h2 {
+    font-size: 1.8rem;
+  }
+
+  .dlc_pictures {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .dlc_picture {
+    width: 48%;
+  }
+
+  .dlc_container p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .index_container h1 {
+    font-size: 2.8rem;
+    margin: 40px 20px 20px 20px;
+  }
+
+  .index_container p {
+    font-size: 1.4rem;
+    max-width: 1224px;
+  }
+
+  .dlc_container {
+    gap: 30px;
+  }
+
+  .dlc_container h2 {
+    font-size: 2rem;
+  }
+
+  .dlc_pictures {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+  }
+
+  .dlc_picture {
+    width: 45%;
+    max-width: 600px;
+  }
+
+  .dlc_container p {
+    font-size: 1.3rem;
+    max-width: 1224px;
+  }
+}
 
 /* gallerie photos */
 
@@ -391,7 +531,7 @@ un élément avant, un élément après */
   object-fit: cover;
 }
  
-@media screen and (max-width:799px) {
+@media screen and (max-width:424px) {
 
 .photo_gallery {
   flex-direction : column;
@@ -399,100 +539,155 @@ un élément avant, un élément après */
   }
 
 .gallery_column {
-  width : 80%;
+  width : 92%;
 }
-
 }
 
 /* gameplay */
 
+.gameplay_container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0 4rem 0;
+  color: white; 
+}
+
+.trailer_video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+}
+
+.gameplay_container h2 {
+  color: #DFCA9D;
+  margin-bottom: 1rem;
+}
+
+.gameplay_pic {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.gameplay_description,
+.gameplay_weapons,
+.gameplay_lore {
+  width: 90%;
+  max-width: 800px;
+  
+  background-color: rgba(0, 0, 0, 0.3); 
+  border-radius: 20px;               
+  padding: 20px
+}
+
+.gameplay_description p,
+.gameplay_weapons p,
+.gameplay_lore p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .gameplay_container {
+    justify-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .trailer_video {
+    width: 100%;  
+    max-width: 1224px;
+    margin-bottom: 2rem;
+  }
+
+  .gameplay_description,
+  .gameplay_weapons {
+    flex: 1 1 45%;   
+    margin: 1rem;
+    max-width: 600px;   
+  }
+
+  .gameplay_lore {
+    flex: 1 1 100%;      
+    margin: 1rem;
+  }
+}
+
 /* actus */
 
 .news_container {
-  display : flex ;
+  width: 100vw;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.news_column {
-  width : 92vw ;
-  display : flex ; 
-  flex-direction: column;
-}
-
 .news_article {
-  color : white ; 
-  max-width: 100%;
-  margin-top : 2rem ;
-  margin-bottom : 0 ;
-  justify-self: center;
-
-  background-color: rgba(0, 0, 0, 0.300);
-  border-radius: 20px ;
-  padding : 12px 20px 30px 20px; 
+  color: white;
+  width: 90%;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 12px 20px 40px 20px;
 }
 
 .news_title {
-  color : #DFCA9D ;
-  font-size : 1.4rem ;
-  margin-top : 0.6rem ;
-  margin-bottom : 0.6rem ;
+  color: #DFCA9D;
+  font-size: 1.2rem;
+  margin: 0.6rem 0;
+}
+
+.news_text {
+  font-size: 1rem;
+  text-align: justify;
+  margin: 0.6rem 0 -0.8rem 0;
 }
 
 .news_picture {
-  width : 100%;
-  height : auto;
-  border-radius : 10px;
-  margin-top : 0.6rem ;
-  margin-bottom : 0.6rem ;
-  
-}
-
-.news_text {
-  max-width: 100%;
-  font-size : 1.1rem ;
-  margin-top : 0.6rem ;
-  margin-bottom : -0.8rem ;
-  text-align: justify;
-}
-
-.news_vertical_banner {
-  display : none ;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0.6rem 0;
 }
 
 .news_author {
-  margin-bottom: -1.5rem;
-  font-size : 0.75rem ;
-  font-style: italic ;
-  margin-top : 0.4rem ;
-  color : grey ;
-  justify-self: flex-end ;
+  justify-self: flex-end;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: grey;
+  margin-top : 1.5rem ;
+  margin-bottom : -1.6rem ;
+  padding-top: 0.6rem;              
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 
-@media screen and (min-width: 800px) and (max-width: 1279px) {
-.news_title {
-  font-size : 1.5rem ;
-}
-.news_text {
-  font-size : 1.2rem ;
-}
+@media screen and (min-width: 1024px) {
+  .news_container {
+    flex-direction: row;       
+    flex-wrap: wrap;         
+    justify-content: center;  
+    align-items: flex-start;  
+  }
 
-.news_container {
-  flex-direction : row ;
-  justify-content: center ;
-  align-items: flex-start ;
-  gap : 20px ;
-}
-}
+  .news_article {
+    width: 45%;             
+    margin: 1rem;           
+  }
 
-@media screen and (min-width: 1280px) {
-.news_title {
-  font-size : 1.7rem ;
-}
+  .news_title {
+    font-size: 1.5rem;      
+  }
 
-  
-.news_text {
-  font-size : 1.3rem ;
-}
-
+  .news_article p {
+    font-size: 1.15rem;      
+  }
 }
