@@ -3,23 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="fansite1.css">
-    <title>Accueil</title>
+    <link rel="stylesheet" href="./fansite1.css">
+    <title>Document</title>
 </head>
-<body class="index_body">
-    <nav class="navbar">
-        <a href="index.html"><img src="./images/sample_0.jpg" alt="logo de hollow knight" width="50px" height="50px"></a>
-        <a href="./fansite1.html">Accueil</a>
-        <a href="./actualites.html">Actualités</a>
-        <a href="./galerie.html">Galerie</a>
-        <a href="./new_opus.html">Nouvel opus</a>
-        <a href="../contact.html">Contact</a>
-    </nav>
-    <div class="image-grid">
-        <div class="image-placeholder"><span>200 x 145</span></div>
-        <div class="image-placeholder"><span>200 x 145</span></div>
-        <div class="image-placeholder"><span>200 x 145</span></div>
+<body>
+    <div class="main">
+        <div class="nav">
+            <label class="hamburger_menu">
+                <!-- checkbox : permet de cliquer et d'avoir une réaction sans JS -->
+                <input type="checkbox">
+            </label>
+
+            <div class="sidebar_container">
+                <!-- aside : balise accessibilité pour un  
+                élément sans rapport avec le contenu de la page -->
+                <aside class="sidebar">
+                    <nav class="burger_links">
+                        <a href="index.html" class="burger_link_home">Accueil</a>
+                        <a href="./fansite1.html" class="burger_link_home">Hollow Knight</a>
+                        <a href="./fansite1/actualites.html">Actualités</a>
+                        <a href="./fansite1/galerie.html">Galerie</a>
+                        <a href="./fansite1/new_opus.html">Silksong</a>
+                        <a href="../fansite2/fansite2.html" class="burger_link_home">Expédition 33</a>
+                        <a href="../fansite2/news.html">News</a>
+                        <a href="../fansite2/media.html">Media</a>
+                        <a href="../fansite3/fansite3.html" class="burger_link_home">Dark Souls III</a>
+                        <a href="../fansite3/gallerie.html">Galerie</a>
+                        <a href="../fansite3/gameplay.html">Gameplay</a>
+                        <a href="../fansite3/actus.html">Actualités</a>
+                    </nav>
+                </aside>
+            </div>
+
+            <nav class="desktop_nav_bar">
+                <a href="../index.html">
+                    <img class="nav_logo" src="../fansite3/pictures/logo_final.png" alt="logo">
+                </a>
+                <div class="buttons_box">
+                    <div class="dropdown">
+                        <button class="dropdown_button">Hollow Knight</button>
+                        <div class="dropdown_content">
+                            <a href="fansite1/fansite1.html">Accueil</a>
+                            <a href="fansite1/actualites.html">Actualités</a>
+                            <a href="fansite1/galerie.html">Galerie</a>
+                            <a href="fansite1/new_opus.html">Silksong</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropdown_button">Expédition 33</button>
+                        <div class="dropdown_content">
+                            <a href="fansite2/fansite2.html">Accueil</a>
+                            <a href="fansite2/news.html">News</a>
+                            <a href="fansite2/media.html">Media</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropdown_button">Dark Souls III</button>
+                        <div class="dropdown_content">
+                            <a href="fansite3/fansite3.html">Accueil</a>
+                            <a href="fansite3/gallerie.html">Galerie</a>
+                            <a href="fansite3/gameplay.html">Gameplay</a>
+                            <a href="fansite3/actus.html">Actualités</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <section class="game-card" aria-label="game-title">
+            <div class="game-card-top" role="img" aria-label="Bannière du jeu">
+                <img src="./images/hollow_knight_banner.jpg" style="object-fit: fill;" alt="Bannière du jeu" />
+                <div class="card-overlay">
+                <a href="../index.html" class="back-btn" title="Retour">
+                    ←
+                </a>
+                </div>
+            </div>
+
+            <div class="title-block">
+                <div class="title-left">
+                <h1 id="game-title">Hollow Knight</h1>
+                <div aria-label="row meta">
+                    <div class="rating" title="Note">
+                        <span class="etoiles">★ 18.2/20 (jeuxvideo.com)</span>
+                        <span class="game-tag">· Jeu solo</span>
+                        <span class="game-tag">· Metroidvania</span>
+                        <span class="game-tag">· De type Souls</span>
+                        <span class="game-tag">· Plateforme</span>
+                        <span class="game-tag">· Super B.O.</span>
+                        <span class="game-tag">· Atmosphere</span>
+                        <span class="game-tag">· Exploration</span>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">PC</span>
+                    <span class="tag">PS4</span>
+                    <span class="tag">Nintendo Switch</span>
+                    <span class="tag">Xbox One</span>
+                    <span class="tag">Mac OS</span>
+                    <span class="tag">Linux</span>
+                </div>
+                </div>
+
+                <div style="text-align:right;">
+                <div class="price">54,99€</div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="label">Sortie</div>
+                    <div class="value">24 févr. 2017</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Joueurs</div>
+                    <div class="value">1</div>
+                </div>
+                <div class="info-card">
+                    <div class="label">Editeur/Développeur</div>
+                    <div class="value">Team Cherry/ Team Cherry</div>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <h2>À propos</h2>
+            <p>
+            Hollow Knight est un jeu d'action-aventure de type Metroidvania développé par Team Cherry. Le joueur y incarne un petit chevalier
+            silencieux explorant <b>Hallownest</b>, un vaste royaume souterrain déchu, rempli de créatures étranges, de mystères et d'anciens secrets.
+            Le jeu se distingue par ses cartes labyrinthiques, son <b>level design exigeant</b>, son gameplay précis, ainsi que par une <b>direction artistique dessinée à la main</b> et
+            une bande-son immersive composée par <b>Christopher Larkin</b>.Au fil de l'aventure, le joueur affronte des boss redoutables, obtient de nouvelles capacités,
+            et découvre progressivement la tragédie qui a frappé Hallownest. Avec son univers <b>sombre et poétique</b>, sa difficulté maîtrisée et son exploration riche,
+            Hollow Knight a reçu un accueil critique très positif et est devenu un classique du genre Metroidvania.
+            </p>
+            <div class="actions">
+            <button class="btn primary" id="buyBtn">Acheter</button>
+            <button class="btn" id="wishlist">+ Ajouter à la wishlist</button>
+            <button class="btn" id="share">Partager</button>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <h2>Captures d'écran</h2>
+            <div class="screenshots shots">
+                <img src="./images/lake_of_unn.webp" alt="Capture 2" />
+                <img src="./images/hollowknight_platforming.jpg" alt="Capture 1" />
+                <img src="./images/pano_1.jpg" alt="Capture 3" />
+            </div>
+        </section>
+
+        <section class="more">
+            <h2>Détails</h2>
+            <div class="more-grid">
+                <div class="more-card">
+                    <div class="label muted">Développeur</div>
+                    <div class="value">Team Cherry</div>
+                    <p class="muted">
+                        Team Cherry est un studio indépendant de jeux vidéo australien. Il a été co-fondé en 2014 par Ari Gibson et William Pellen, 
+                        qui ont travaillé ensemble auparavant sur des jams de jeux. Leur premier titre, Hollow Knight, a été financé via Kickstarter.
+                    </p>
+                </div>
+                <div class="more-card" class="cache">
+                    <div class="label muted">Dernières actus</div>
+                    <div class="value">Silksong :Devenez la Princesse Chevalier</div>
+                    <p class="muted">
+                        Dans la peau de Hornet, princesse protectrice d'Hallownest, partez à l'aventure dans un royaume inédit,
+                        hanté par la soie et les chants. Capturée et emmenée en terre inconnue, Hornet devra affronter des ennemis et résoudre des mystères
+                        tout en entreprenant un périlleux pèlerinage jusqu'au sommet du royaume.
+                    </p>
+                    <a href="./actualites.html">Voir plus</a>
+                </div>
+            </div>
+        </section>
     </div>
-    <p>index</p>
 </body>
 </html>
