@@ -18,8 +18,7 @@
     src: url(./fonts/montserrat/Montserrat-Regular.ttf);
 }
 /*change colors on dark mode*/
-@media (prefers-color-scheme: dark){
-    :root{
+:has(#dark-mode-toggle:checked){
     --color1:#242543;
     --color2:#7E8AAC;
     --color5:#E7E1CB;
@@ -28,7 +27,16 @@
     --transparent1:rgba(52, 52, 50, 0.6); 
     --transparent2:rgba(36, 37, 67, 0.8);
         }
+.logo-dark-mode{
+    align-self: baseline;
+    color: var(--color2);
+    font-size:x-large;
+
 }
+#dark-mode-toggle{
+    display: none;
+}
+/*body*/
 body{
     background-image:url(https://static.wixstatic.com/media/52610a_549edd34a6334553b74ade3490813210~mv2.webp/v1/fill/w_1615,h_734,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/52610a_549edd34a6334553b74ade3490813210~mv2.webp);
     background-attachment: fixed;
@@ -87,7 +95,7 @@ main{
     border: 1px solid var(--color4);
     background-color: var(--transparent1);
     max-width: 200px;
-    margin:25px;
+    padding-right: 10px;
 }
 .link-summary{
     color: var(--color3);
