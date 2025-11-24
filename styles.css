@@ -185,7 +185,9 @@ un élément avant, un élément après */
   z-index: 99;
 }
 
-.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar {translate: 0;}
+.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar {
+  translate: 0;
+}
 
 .burger_links {
   display: flex;
