@@ -62,6 +62,10 @@ ul{
 .pic-size{
     max-width: 25px;
 }
+#contact{
+  color: var(--color5);
+}
+
 /* fin footer */
 /*-------------------------------------------------------------------*/
 /* BURGER + NAV BAR */
