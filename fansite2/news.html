@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="./fansite2.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Update</title>
+    <title>Mise a jour</title>
 </head>
 <body>
-    <header>
+    <header>        
+        <a href="../index.html" ><img id="logo" src="./images/logo_final.png" alt="homepage logo"></a>
+        </div>
         <nav class="navbar-inline">
             <div class="menu-full">
-                <a href="../index.html" ><img id="logo" src="./images/logo_final.png"></a><!--TODO complete link-->
                 <a class="link" href="./fansite2.html">Accueil</a>
                 <a class="link" href="./news.html">News</a>
                 <a class="link" href="./media.html">Média</a>
                 <a class="link" href="../fansite3/fansite3.html">Dark Souls 3</a>
-                <a class="link" href="../fansite1/fansite1.html">Hollow knight</a>
+                <a class="link" href="../fansite1/fansite1.html">Hollow Knight</a>
             </div>
         </nav>
         <nav class="navbar">
-            <a href="#" ><img id="logo-mobile" src="./images/logo_final.png"></a>
             <input type="checkbox" id="hamburger">
             <label id="hamburger-logo" for="hamburger"><i class="fa fa-bars"></i></label>
             <div class="menu">
@@ -28,41 +28,74 @@
                 <a class="link" href="./news.html">News</a>
                 <a class="link" href="./media.html">Média</a>
                 <a class="link" href="../fansite3/fansite3.html">Dark Souls 3</a>
-                <a class="link" href="../fansite1/fansite1.html">Hollow knight</a>
+                <a class="link" href="../fansite1/fansite1.html">Hollow Knight</a>
             </div>
         </nav>
     </header>
-    <main class="full"><!--class not used ?-->
-        <h1>Mise a jour</h1>
+    <main>
+        <div class="logo-dark-mode"><!--Dark mode switch-->
+            <input type="checkbox" id="dark-mode-toggle">
+            <label id="toggle" for="dark-mode-toggle"><i class="fa fa-moon-o"></i></label>
+        </div>
+        <h1>Actualités</h1>
+        <div id="summary">
+            <p>Table des matières :</p>
+            <ol  class="sumsum">
+            <li><a class="link-summary" href="#article1">Expedition 33 est maintenant disponible !</a></li>
+            <li><a class="link-summary" href="#article2">Bande-annonce de l'histoire</a></li>
+            <li><a class="link-summary" href="#article3">Coffrets Vinyl et CD</a></li> 
+            </ol>
+        </div>
         <section class="block-section">
-            <article class="block-article-full">
-                <img class="img-news" src="./images/placeholder.svg">
-                <h2 class="h2-centered">sous titre</h2>
-                <p class="p-news"><details><summary> ipsum dolor sit amet consectetur adipisicing</summary> elit. Tempora nostrum enim velit perspiciatis veritatis neque odio? Placeat, quas atque, eum non numquam nemo et repellat autem aspernatur ex adipisci fugiat.</details></p>
+            <article id="article1" class="block-article-full">
+                <img class="img-news" src="./images/patch-note.avif" alt="clair obscur screenshot">
+                <h2 class="h2-centered">Expedition 33 est maitenant disponible !</h2>
+                <p class="p-news"><details><summary>
+                    Une fois par an, la Peintre se réveille pour graver son nombre maudit sur le monolithe. Et toutes les personnes de cet âge disparaissent, se transformant en fumée, puis s’évanouissant dans le néant.</summary><br>
+                    Chaque année, le nombre diminue, effaçant davantage de vies. Bientôt, elle inscrira « 33 ». Quand ce sera fait, nous partirons pour notre ultime mission : détruire la Peintre et mettre fin à son cycle mortel une fois pour toutes.<br><br>
+                    Embarquez pour l’Expédition d’une vie aux côtés de Gustave (Charlie Cox), Maelle (Jennifer English), Lune (Kirsty Rider), Sciel (Shala Nyx) et Monoco (Rich Keeble), ainsi que des personnages incroyables comme l’Esquie, puissant mais paresseux (Maxence Cazorla), le mystérieux Verso (Ben Starr) et la force sombre qu’est Renoir (Andy Serkis).<br><br>
+                    Que le monde puisse enfin voir le soleil se lever sans l’ombre de sa silhouette maudite, et que le vent du renouveau vous porte jusqu’aux confins de la terre.<br><br>
+                    Demain vient, grâce à vous.
+                    </details></p>
             </article>
             <hr>
-            <article class="block-article-full">
-                <img class="img-news" src="./images/placeholder.svg">
-                <h2 class="h2-centered">sous titre</h2>
-                <p class="p-news"><details><summary>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</summary> Atque accusamus nemo facilis assumenda distinctio mollitia suscipit adipisci expedita sit, eligendi consequuntur omnis quia, cum amet totam velit necessitatibus. Non, autem!</details></p>
+            <article id="article2" class="block-article-full">
+                <img class="img-news" src="./images/lore-trailer.avif" alt="clair obscur screenshot">
+                <h2 class="h2-centered">Bande annonce de l'histoire</h2>
+                <p class="p-news"><details><summary>Chaque année, la Peintre grave le nombre maudit sur son monolithe — et chaque année, une expédition part pour mettre fin à son règne. Aucune n’est jamais revenue, mais toutes ont tracé la voie pour celles qui suivent.</summary><br>
+                    Soixante-sept ans après que leur monde se soit brisé lors de la Fracture, Clair Obscur : Expedition 33 suit les idéalistes qui osent encore rêver d’un avenir pour Lumière.<br><br>
+                    Dans cette bande-annonce — narrée par Jennifer English (voix de Maelle en version anglaise) — plongez dans le monde de Maelle, à la veille de son départ avec l’Expédition 33.<br><br>
+                    Une dernière chance de détruire la Peintre, afin qu’elle ne peigne plus jamais la mort.<br><br>
+                    ~ L’équipe de l’Expédition 33
+                    <br><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jNKdgRCYqPs?si=27CSP9WlHlcqq8L5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </details></p>
             </article>
             <hr>
-            <article class="block-article-full">
-                <img class="img-news" src="./images/placeholder.svg">
-                <h2 class="h2-centered">sous titre</h2>
-                <p class="p-news"><details><summary>Lorem ipsum dolor sit amet consectetur adipisicing elit.</summary> Et, iusto quaerat delectus vitae eius aperiam dolore ducimus, iure vero, repellat soluta minus sapiente sunt. Dicta deserunt tenetur ducimus eligendi vitae.</details></p>
+            <article id="article3" class="block-article-full">
+                <img class="img-news" src="./images/vinyl.avif" alt="clair obscur screenshot">
+                <h2 class="h2-centered">Coffrets vinyle et CD</h2>
+                <p class="p-news"><details>
+                    <summary>Mes amis, aujourd’hui est un jour très spécial.<br>
+                    Nous pouvons enfin ouvrir les précommandes pour nos vinyles et coffrets CD !<br>
+                    Retrouvez toutes les infos ici...</summary><br>
+                    Un mot du compositeur de Clair Obscur : Expedition 33, Lorien Testard :
+                    <blockquote cite="https://www.expedition33.com/post/vinyl-and-cd-sets-pre-orders-are-open">
+                    « Je suis très heureux d’annoncer ces éditions physiques de la bande originale de Clair Obscur : Expedition 33. Un immense merci à Sandfall Interactive et Laced pour avoir rendu ces sorties possibles, et à Nicholas Maxson-Francombe pour les magnifiques visuels musicaux des pochettes. Je vous souhaite un merveilleux voyage à travers le monde et la bande originale d’Expedition 33.
+                    Merci du fond du cœur — pour votre écoute, pour avoir adopté le jeu et sa musique, pour en avoir fait une partie de votre propre aventure. J’ai hâte que vous la découvriez. »
+                    </blockquote></details></p>
             </article>
             <hr>
         </section>
     </main>
     <footer>
-    <nav class="footer-navbar"><!--useless?-->
+    <nav>
         <div class="footer-menu">
             <a class="link-footer" href="./fansite2.html">Accueil</a>
             <a class="link-footer" href="./news.html">News</a>
             <a class="link-footer" href="./media.html">Média</a>
             <a class="link-footer" href="../fansite3/fansite3.html">Dark Souls 3</a>
-            <a class="link-footer" href="../fansite1/fansite1.html">Hollow knight</a>
+            <a class="link-footer" href="../fansite1/fansite1.html">Hollow Knight</a>
         </div>
     </nav>
 </footer>

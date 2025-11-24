@@ -7,6 +7,8 @@
 </head>
 
 <body>
+  
+    
   <div class="index_container">
 <!-- BURGER + NAV BAR -->
 <!-- label : objet d'une interface utilisateur -->
@@ -38,7 +40,7 @@
       </div>
 
       <nav class="desktop_nav_bar">
-        <a href="../index.html">
+        <a href="index.html">
           <img class="nav_logo" src="fansite3/pictures/logo_final.png" alt="logo">
         </a>
         <div class="buttons_box">
@@ -72,6 +74,18 @@
       </nav>
     </div>
     <!-- BURGER + NAV BAR  FIN-->
+
+    <section class="presentation">
+      <h1>Fansite : 3 des meilleurs jeux vidéos de tous les temps (non débattable)</h1>
+      <p>
+      Nous sommes trois élèves de La Plateforme, école d’informatique à Marseille, 
+      et nous avons réalisé ce fansite dans le cadre de notre premier grand projet de groupe en HTML et CSS.  
+      Ce site met en avant trois jeux qui nous passionnent : <em>Clair-Obscur</em> 
+      présenté par Maxime, <em>Hollow Knight</em> par Marius, et <em>Dark Souls III</em> par Nelson.  
+      Notre objectif est de partager notre enthousiasme pour ces jeux tout en expérimentant la création 
+      d'un site web sans JavaScript.
+      </p>
+    </section>
     <!-- Début carrousel -->
     <!-- élements radio à checker-->
     <div class="slider">
@@ -81,10 +95,10 @@
     <!--- debut des slides --->
         <div class="carrousel">
             <label class="item" for="t-1">  
-              <img src="./fansite1/images/hollow_knight.jpeg" alt="hollow knight image">
+              <img src="images/hollow_knight_highres.png" alt="hollow knight image">
             </label>
             <label class="item" for="t-2"> 
-              <img src="./fansite1/images/clair_obscur.jpeg" alt="clair obscur image">
+              <img src="images/clair_obscur_highres.PNG" alt="clair obscur image">
             </label>
             <label class="item" for="t-3"> 
               <img src="./fansite1/images/index_pic_ds3.webp" alt="dark soul 3 image">
@@ -99,7 +113,8 @@
             <label for="t-3" class="dot" id="dot-3"></label>
         </div>
     </div>
-      <footer> <!--TODO complete links -->
+    <!--footer-->
+   <footer>
         <div  class="footer-nav">
           <div class="column">
             <h3>Hollow Knight</h3>
@@ -111,30 +126,29 @@
             </ul>
           </div>
           <div class="column">
-            <h3>Clair Obscur</h3>
-            <ul>
-              <li><a href="#">Accueil</a></li>
-              <li><a href="#">Mise a jour</a></li>
-              <li><a href="#">Média</a></li>
-            </ul>
+              <h3>Clair Obscur</h3>
+              <ul>
+                <li><a href="fansite2/fansite2.html">Accueil</a> </li>
+                <li><a href="fansite2/news.html">Mise a jour</a> </li>
+                <li><a href="fansite2/media.html">Média</a></li>
+              </ul>
           </div>
           <div class="column">
-            <h3 >Dark Souls 3</h3>
-            <ul>
-              <li><a href="#">Accueil</a></li>
-              <li><a href="#">Galerie</a></li>
-              <li><a href="#">Gameplay</a></li>
-              <li><a href="#">Actualités</a></li>
-            </ul>
+              <h3 >Dark Souls 3</h3>
+              <ul>
+                <li><a href="fansite3/fansite3.html">Accueil</a></li>
+                <li><a href="fansite3/gallerie.html">Galerie</a></li>
+                <li><a href="fansite3/gameplay.html">Gameplay</a></li>
+                <li><a href="fansite3/actus.html">Actualités</a></li>
+              </ul>
           </div>
         </div>
-        <div class="footer-github">
-        <a href="#"><img class="pic-size" src="./images/github-mark-white.png">fansite1</a>
-        <a href="#"><img class="pic-size" src="./images/github-mark-white.png">fansite2</a>
-        <a href="https://github.com/nelson-grac-aubert"><img class="pic-size" src="./images/github-mark-white.png"> fansite2</a>
-        </div> 
-        <!--TODO href="#top"-->
-      </footer>
-  </div>
+       <div class="footer-github">
+        <a href="contact.html" id="contact">Contact</a>
+        <a href="https://github.com/marius-gavini"><img class="pic-size" src="./images/github-mark-white.png">Marius</a>
+        <a href="https://github.com/maxime-fourquie"><img class="pic-size" src="./images/github-mark-white.png">Maxime</a>
+        <a href="https://github.com/nelson-grac-aubert"><img class="pic-size" src="./images/github-mark-white.png">Nelson</a>
+       </div> 
+    </footer>
 </body>
 </html>
