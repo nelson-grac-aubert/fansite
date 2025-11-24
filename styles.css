@@ -4,8 +4,8 @@
     --color3:#7E8AAC;
     --color4:#C5E7F0;
     --color5:#FFFFFF;
-    --transparent1:rgba(36, 37, 67, 0.6); 
-    --transparent2:rgba(4, 4, 4, 0.8); 
+    --transparent1:rgba(36, 37, 67, 0.8); 
+    --transparent2:rgba(4, 4, 4, 0.8); /*not used*/
 }
     /* Style global de la page */
 body{
@@ -295,6 +295,43 @@ un élément avant, un élément après */
 
 /* Fin nav bar desktop */
 /*-------------------------------------------------------------------*/
+/*Début présentation*/
+
+.presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--transparent1);
+    padding: 20px;
+    margin: 70px 20px 20px 20px;
+    border-radius: 15px;
+}
+
+.presentation h1{
+    color : var(--color4);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.presentation p{
+    color : var(--color5);
+    font-size: 1rem;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+@media screen and (min-width: 1024px){
+  .presentation {
+    margin : 20px ; 
+    max-width: 1224px ;
+    align-self: center;
+  }
+}
+
+/*Fin présentation*/
+/*-------------------------------------------------------------------*/
 /*DEBUT CARROUSEL*/
 
 /* Conteneur du slider */
@@ -396,6 +433,27 @@ un élément avant, un élément après */
 #t-3:checked ~ .carrousel label[for="t-3"]{
   z-index: 4;
 }
+
+
+@media screen and (min-width: 1024px) {
+  .carrousel {
+    min-height: 75vh; /* occupe presque toute la hauteur de l’écran */
+  }
+
+  .carrousel .item {   /* largeur plus grande */
+    height: 75vh;
+    width : auto ;    
+    border-radius: 40px;
+  }
+
+  .carrousel .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* garde le portrait sans déformation */
+    border-radius: 40px;
+  }
+}
+
 
 /*FIN CARROUSEL*/
 
