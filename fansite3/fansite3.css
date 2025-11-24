@@ -408,19 +408,20 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
   justify-content : center ;
   align-items : center ;
   gap : 20px ;
+  text-align: justify;
 }
 
 .index_container h1 {
   color : #DFCA9D ;
   font-size : 2rem ;
-  text-align : center ;
+  text-align: center;
   margin : 30px 20px 10px 20px ;
 }
 
 .index_container p {
+  width: 88%;
   color : white ;
-  font-size : 1.2rem ;
-  text-align : center ;
+  font-size : 1rem ;
   margin : 0px 20px 10px 20px ; 
 }
 
@@ -441,8 +442,8 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
 
 .dlc_container h2 {
   color: #DFCA9D;
-  font-size: 1.6rem;
   text-align: center;
+  font-size: 1.6rem;
   margin: 0px 20px 10px 20px;
 }
 
@@ -457,17 +458,18 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
 .dlc_picture {
   width: 100%;
   border-radius: 10px;
-   aspect-ratio : 3/4 ; 
+  aspect-ratio : 3/4 ; 
   object-fit : cover ;
 }
 
 .dlc_container p {
+  width : 85% ;
   color: white;
-  font-size: 1.1rem;
-  text-align: center;
+  font-size: 1rem;
   margin: 0px 20px 20px 20px;
   max-width: 800px;
   line-height: 1.5;
+  text-align: justify;
 }
 
 /* Tablette : 426px à 1023px */
@@ -531,6 +533,70 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
   .dlc_container p {
     font-size: 1.3rem;
     max-width: 1224px;
+  }
+}
+
+.awards {
+  width: 90%;
+  margin: 20px auto;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(40,40,40,0.7));
+  border-radius: 10px;
+  color: #fff;
+}
+
+.awards h2 {
+  color: #DFCA9D;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.awards ul {
+  list-style: none;
+  padding: 0;
+}
+
+.awards li {
+  margin: 8px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.awards strong {
+  color: #C5E7F0;
+}
+
+@media (min-width: 425px) and (max-width: 1023px) {
+  .awards {
+    padding: 24px;
+  }
+  .awards h2 {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+  .awards li {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .awards {
+    max-width: 900px;
+    padding: 28px;
+  }
+  .awards h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .awards ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  .awards li {
+    font-size: 1.2rem;
+    margin: 10px 0;
   }
 }
 
