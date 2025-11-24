@@ -29,8 +29,8 @@
     --transparent2:rgba(36, 37, 67, 0.8);
         }
 }
-body{ /*TODO change bg for desktop*/
-    background-image:url(https://static.wixstatic.com/media/52610a_549edd34a6334553b74ade3490813210~mv2.webp/v1/fill/w_1615,h_734,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/52610a_549edd34a6334553b74ade3490813210~mv2.webp);/*TODO change bg for desktop*/
+body{
+    background-image:url(https://static.wixstatic.com/media/52610a_549edd34a6334553b74ade3490813210~mv2.webp/v1/fill/w_1615,h_734,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/52610a_549edd34a6334553b74ade3490813210~mv2.webp);
     background-attachment: fixed;
     background-color: var(--color1);
     display: flex;
@@ -220,7 +220,7 @@ footer a:hover{
     text-decoration: none;
 }
 /*tablet*/
-@media (min-width: 426px)   {/*TODO change media query and verify nothing fucks up*/
+@media (min-width: 426px)   {
     /*body*/
     #summary{
         width: 300px;
