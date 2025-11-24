@@ -27,7 +27,6 @@ body{
 }
 /*-------------------------------------------------------------------*/
 /* DEBUT FOOTER */
-/* Conteneur footer */
 .footer-nav{ 
     display: flex;
     flex-direction: row;
@@ -38,9 +37,7 @@ body{
     color: var(--color2);
     align-items: baseline;
 }
-
 .column{
-  /*  border: 1px solid red;*/
     padding: 25px;
 }
 .footer-github{
@@ -49,7 +46,6 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
 }
 footer a{
     color: var(--color3);
@@ -58,7 +54,6 @@ footer a{
 footer a:hover{
     color: var(--color2);
 }
-
 ul{
     list-style: none;
     margin: 0;
