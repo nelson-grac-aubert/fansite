@@ -1,115 +1,309 @@
-font-face{
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight:normal;
-    font-style:normal;
-}
-*{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:12px;
-}
-
 body{
-    margin:0;
-    box-sizing:border-box;
-    background-image:url("./images/sample_0.jpg");
-    background-size:cover;
-    min-height:800px;
-    background-position: center;  
-}
-
-nav{
-    display:flex;    
-}
-
-nav>a{
-    display: block;
-    width: 400px;
-    background-color: rgba(0,0,0,0.2);
-    text-align: center;
-    box-sizing: border-box;
-    padding: 20px;
-    color:white;
-    margin: 1px;
-    text-decoration: none;
-    transition:all 0.3s ease;
-}
-nav>a:hover{
-    background-color: rgb(252, 252, 252);
-    transition:all 0.3s ease;
-    color:black;
-}
-/* Grille d'images (placeholders) */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 colonnes égales */
-    gap: 20px; /* Espacement entre les éléments */
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.image-placeholder {
-    width: 145px;
-    height: 200px;
-    margin-bottom: 20px; /* Maintient le ratio 200x145 (145/200 = 0.725) */
-    background-color: #e0e0e0; /* Gris clair pour le fond */
-    display: flex;
-    justify-content: center;
+    margin: 0;
+    font-family: sans-serif;
     align-items: center;
-    color: #777;
-    border: 1px solid #ccc;
-    box-sizing: border-box; /* Inclut le padding et la bordure dans la taille totale */
-    position: relative; /* Pour positionner le texte "200 x 145" */
-    border-radius: 5%;
+    min-height: 100vh;
+    background-color: #212f4c;
 }
 
-.image-placeholder span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centre le texte */
-    font-size: 0.9em;
+.etoiles{color:#ffd54a;font-weight:700}
+
+
+/* Hero */
+/* Variables couleur */
+:root{
+  --bg:#0f1720;
+  --card:#111827;
+  --muted:#9aa4b2;
+  --accent:#7c3aed;
+  --glass: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.04);
+  --radius:14px;
+  --gap:18px;
+  --maxw:1100px;
 }
 
-/*.card{
-    width: 305px;
-    height: 480px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px;
-    overflow: hidden;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.card img{
-    width: 100%;
-    height: auto;
+/* Reset */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui;
+  background: linear-gradient(180deg,#071023 0%, #0f1720 100%);
+  color:#e6eef8;
+  padding:24px;
+  display:flex;
+  justify-content:center;
 }
 
-.card:hover{
-    transform: scale(1.05);
-    transition: transform 0.3s;
+.wrap{
+  width:100%;
+  max-width:var(--maxw);
 }
 
-.carrousel {
-    display: grid;
-    grid-auto-flow: column;
-    scroll-behavior: auto;
-    gap: 1.2rem;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
+.game-card{
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  margin-bottom:18px;
 }
-*/
-/*hamburger menu styles*/
+
+.game-card-top{
+  position:relative;
+  height:220px;
+}
+
+.game-card-top img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.card-overlay{
+  position:absolute;
+  top:18px;
+  left:18px;
+}
+
+.back-btn{
+  width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--glass);
+  border:1px solid var(--border);
+  cursor:pointer;
+}
+a.back-btn{
+  text-decoration:none;
+  color:#e6eef8;
+}
+/* Title block */
+.title-block{
+  display:flex;
+  justify-content:space-between;
+  padding:18px;
+}
+
+h1{
+  margin:0 0 6px 0;
+  font-size:20px;
+}
+
+.meta{
+  color:var(--muted);
+  display:flex;
+  gap:12px;
+}
+
+.tags{
+  display:flex;
+  gap:8px;
+  margin:12px 0;
+}
+
+.tag{
+  padding:6px 10px;
+  background:rgba(255,255,255,0.02);
+  border:1px solid var(--border);
+  border-radius:999px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.price{
+  color:#d19cff;
+  font-size:16px;
+  font-weight:600;
+}
+
+/* Info grid */
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  padding:18px;
+  border-top:1px solid var(--border);
+}
+
+.info-card{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+}
+
+.label{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.value{
+  font-weight:600;
+  margin-top:6px;
+}
+
+/* Main layout */
+.main{
+  display:grid;
+  gap:22px;
+  padding:18px;
+}
+
+.about p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:16px;
+}
+
+.btn{
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.02);
+  cursor:pointer;
+  color:inherit;
+  font-weight:600;
+}
+
+.btn.primary{
+  background:linear-gradient(90deg,var(--accent),#5a2bd8);
+  border:none;
+  color:white;
+}
+
+/* Screenshots */
+.screenshots{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:12px;
+}
+
+.screenshots img{
+  width:100%;
+  border-radius:10px;
+  border:1px solid var(--border);
+  height:110px;
+  object-fit:cover;
+}
+
+/* More info */
+.more-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.more-card{
+  background:var(--card);
+  padding:12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+
+/* Footer */
+.footer{
+  margin-top:20px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .info-grid{grid-template-columns:repeat(2,1fr);}
+  .screenshots{grid-template-columns:repeat(2,1fr);}
+}
+
+@media (max-width:600px){
+  body{padding:14px}
+  .info-grid{grid-template-columns:1fr}
+  .screenshots{grid-template-columns:1fr}
+  header{flex-direction:column;align-items:stretch}
+  .title-block{flex-direction:column}
+}
+
+
+
+.nav-section {
+  margin-top: 40px;
+}
+
+.nav-section h2 {
+  margin-bottom: 14px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links a {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid var(--border);
+}
+
+
+
+.news-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.news-card h3 {
+  margin-bottom: 8px;
+}
+
+.news-card p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.more-card a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+
+/* BURGER + NAV BAR */
+
+* {
+  padding : 0;
+  margin : 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: white; 
+  text-decoration: none;
+}
+
+/* root selectionne l'élément racine du document, ici <html>
+c'est ici qu'on déclare les variables CSS */
 :root {
   --burger_bar_width : 45px ;
   --burger_bar_height : 6px ;
   --burger_gap : 6px ;
   --burger_background_color : rgba(255, 255, 255, 1) ; 
-  --burger_slider_color : rgba(165, 165, 165, 0.5) ; 
-  --burger_animation_time : 200ms ease-in-out ;
+  --burger_slider_color : rgba(0, 0, 0, 0.9) ; 
+  /* ease-in-out : début et fin rapide */
+  --burger_animation_time : 300ms ease-in-out ;
   --hamburger_margin : 10px ; 
 
   /* on calcule la hauteur de l'élement en entier pour déterminer la longueur
@@ -118,62 +312,67 @@ nav>a:hover{
 }
 
 .hamburger_menu {
-  /* calcul de la largeur de la croix après transformation : 
-  hauteur du menu x racine carrée de 2 */
-  --cross-width : calc(var(--hamburger_menu_height) * 1.414213);
-
   display: flex ;
   flex-direction : column ;
-  gap : var(--burger_gap) ;
+  gap : var(--burger_gap) ; 
   width: max-content ; /* la largeur clickable n'est que celle sous les barres */
 
   /* ne bouge pas en scrollant, fixé en haut a droite */
-  position : absolute ; 
+  position : fixed ; 
   top : var(--hamburger_margin) ;
-  right : var(--hamburger_margin) ;
+  right : calc(var(--hamburger_margin) * 2) ;
 
-  z-index: 2; /* supérieur à 0 donc apparait toujours en avant */
+  z-index: 100; /* supérieur à 0 donc apparait toujours en avant */
 
   cursor : pointer ; 
+
+  /* calcul de la largeur de la croix après transformation : 
+  hauteur du menu x racine carrée de 2 */
+  --cross-width : calc(var(--hamburger_menu_height) * 1.414213);
 }
 
+/* les trois barres du burger seront la checkbox, 
+un élément avant, un élément après */
 .hamburger_menu::before,
 .hamburger_menu::after,
 .hamburger_menu input {
   content: "" ;
-  width :  var(--burger_bar_width) ;
+  width : var(--burger_bar_width) ;
   height : var(--burger_bar_height) ; 
-  background-color: var(--burger_background_color);
+  background-color: var(--burger_background_color) ;
   border-radius : 999px ; 
 
   transition : opacity var(--burger_animation_time), width var(--burger_animation_time), 
   rotate var(--burger_animation_time), translate var(--burger_animation_time) ;
   
-  /* transition des deux lignes en croix : la rotation se fait atour du bon point*/
+  /* transition des deux lignes en croix :  
+  la rotation se fait atour du bon point*/
   transform-origin: right center;
 }
 
 .hamburger_menu input {
+  /* on ne veut pas interagir avec la checkbox 
+  mais avec tout son conteneur (les 3 barres) */
   appearance: none ;
   outline : none ;
-  pointer-events: none ; /* on ne veut pas interagir avec la checkbox mais avec tout son conteneur (les 3 barres) */
+  pointer-events: none ; 
 }
 
 .hamburger_menu input:checked {
+  /* la barre du milieu disparait pour faire la croix */
   opacity : 0 ;
   width : 0 ; 
 }
 
-/* si le hamburger menu a son input checked, alors agit sur ::before et ::after càd les barres du haut/bas*/
+/* si le hamburger menu a son input checked, alors agit sur 
+::before et ::after càd les barres du haut/bas*/
 .hamburger_menu:has(input:checked)::before {
   rotate: -45deg ;
   width: var(--cross-width);
   /* on décale legerement les barres pour tenir compte de leur épaisseur
-  on décale le x de 0, le y de la moitié de l'épaisseur */
+  on décale l'abcisse de 0, l'ordonnée de la moitié de l'épaisseur */
   translate : 0 calc(var(--burger_bar_height) / -2) ;
-
 }
-
 .hamburger_menu:has(input:checked)::after {
   rotate: 45deg ;
   width: var(--cross-width);
@@ -181,31 +380,125 @@ nav>a:hover{
 }
 
 .sidebar_container {
-  display : flex ; 
+  display: flex;
   justify-content: flex-end;
 }
 
 .sidebar {
-  transition : translate var(--burger_animation_time) ;
-  translate : 100% ;
-  padding : 0.5rem 1rem;
-  padding-top: calc(var(--hamburger_menu_height) + var(--hamburger_margin) + 1rem) ;
-  background-color: rgba(165, 165, 165, 0.2);
-  color : var(--burger_background_color) ; 
-  width: 50vw;
-  height : 100vh;
+  transition: translate var(--burger_animation_time);
+  translate: 110%;
+  padding: 1rem 1.5rem;
+  padding-top: calc(var(--hamburger_menu_height) + var(--hamburger_margin) + 0.5rem);
+  background-color: var(--burger_slider_color);
+  color: var(--burger_background_color);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  z-index: 99;
 }
 
-.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar { 
-  translate : 0 ;
-}
+.hamburger_menu:has(input:checked) ~ .sidebar_container .sidebar {translate: 0;}
 
 .burger_links {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 1.5rem;
 }
 
 .burger_links a {
-  padding : 5px ;
-  font-size: 18px;
+  font-size: 1.1rem;
+  padding: 0.1rem 0;
+  text-decoration: none;
+  color: inherit;
 }
+
+.burger_link_home {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #C5E7F0 ;
+}
+
+.burger_links a:hover {color : #C5E7F0;}
+/*fin burger menu*/
+/*-------------------------------------------------------------------*/
+/* NAV BAR DESKTOP */
+.desktop_nav_bar {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.desktop_nav_bar img {
+  height: 15vh;
+  border-radius: 999px;
+  margin-right: 20px;
+}
+
+.buttons_box {
+  display: flex;
+  gap: 15px;
+}
+
+.dropdown {position: relative;}
+
+.dropdown_button {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  padding: 10px 20px;
+  margin-right : 40px ;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.dropdown_button:hover {background-color: rgba(255, 255, 255, 0.05);}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown_content a {
+  font-size: 1.2rem ;
+  padding: 18px 20px;
+  display: block;
+}
+
+.dropdown_content a:hover {background-color: #555;}
+
+.dropdown:hover .dropdown_content {display: block;}
+
+@media screen and (max-width: 799px) {
+  .desktop_nav_bar {display: none ;}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+  .desktop_nav_bar {display: none ;}
+  .sidebar {width: 45vw;}
+  .burger_links a {font-size: 18px;}
+}
+
+@media screen and (min-width: 1280px) {
+  .hamburger_menu {display: none;}
+  .sidebar {display : none ;}
+  .banner_box {display : none ;}
+}
+
+/* Fin nav bar desktop */
+
