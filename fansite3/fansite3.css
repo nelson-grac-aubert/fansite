@@ -323,11 +323,6 @@ le selecteur ~ cible tous les frères suivants dans la meme div*/
   margin-top : 20px ;
 }
 
-@media screen and (min-width: 425px) {
-  .audio.container {
-    flex-direction : row ;
-  }
-}
 /* footer */
 
 .footer_container {
